@@ -20,7 +20,7 @@ services:
 
   db:
     image: mysql:8.0
-    command: --innodb-use-native-aio=0 #この1行追加
+    command: --innodb-use-native-aio=0 
     container_name: db
     environment:
       MYSQL_ROOT_PASSWORD: root

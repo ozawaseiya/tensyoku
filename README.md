@@ -14,7 +14,7 @@ AWS(IAM,VPC,EC2,RDS,ELB,EIP,Route53,Certificate Manager), Github, Debian GNU/Lin
 Usage
 Webシステム機能一覧
 
-1.会員登録機能, 2.ログイン機能, 3.ログアウト機能, 4.退会機能, 5.ページネーション機能, 6.投稿機能, 7.投稿保留機能, 8.詳細画面機能, 9.写真追加機能, 10.いいね機能, 11.既読機能, 12.コメント機能, 13.コメント保留機能, 14.管理者投稿削除機能
+1.会員登録・ログイン・ログアウト機能, 2.案件フォルダの作成・削除機能, 3.タスクの作成・編集・削除機能, 4.プロフィール画像アップロード・削除機能, 5.ページネーション機能
 
 License
 Copyright(c) 2020 Seiya Ozawa This software is released under the MIT License, see LICENSE. https://opensource.org/licenses/mit-license.php

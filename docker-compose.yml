@@ -19,7 +19,7 @@ services:
       - php
 
   db:
-    image: mysql:8.0
+    image: mysql:8.0.3
     command: --innodb-use-native-aio=0 
     container_name: db
     environment:

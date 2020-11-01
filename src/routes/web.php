@@ -15,12 +15,16 @@
 //    return view('welcome');
 //});
 Auth::routes();
-//1.企業一覧ページ（最初のページと詳細ページ）
+//1.企業一覧ページ（最初のページ）
 Route::get('/', 'CompanyController@list')->name('list');
-Route::get('/{company_apply_id}', 'CompanyController@list')->name('list.show');
 
 //2.転職サイト紹介ページ
 Route::get('/info', 'CompanyController@info')->name('info');
+
+//1.企業一覧ページ（詳細ページ）
+Route::get('/{company_apply_id}', 'CompanyController@detail')->name('detail');
+
+
 
 //ユーザー認証
 Route::group(['middleware' => 'auth'], function() {
@@ -37,6 +41,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('message/{id}', 'LoginController@messageShow')->name('message');
     Route::post('message/{id}/send', 'LoginController@messageSendForm')->name('send');
     Route::post('message/{id}/send', 'LoginController@messageSend');
+
 //5.管理画面用ログイン関連ページ
     Route::get('/admin/register', 'AdminRegisterController@showAdminRegistrationForm')->name('admin.register');
     Route::post('/admin/register', 'AdminRegisterController@showAdminRegister');

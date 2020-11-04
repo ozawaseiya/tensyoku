@@ -17,12 +17,12 @@ class UsersTableSeeder extends Seeder
     // 初期データ用意（列名をキーとする連想配列）
     $users = [
               ['id' => 1,
-               'user_name' => '田中太郎',
-               'user_email' => 'tanaka@gmail.com',
-               'user_password' => '12345abc',
-               'user_year' => 1,
-               'user_position' => 'バックエンドエンジニア',
-               'user_skill' => 'PHP',
+               'name' => '田中太郎',
+               'email' => 'tanaka@gmail.com',
+               'password' => '12345abc',
+               'year' => 1,
+               'position' => 'バックエンドエンジニア',
+               'skill' => 'PHP',
                'message_category_id' => 1
                ]
              ];

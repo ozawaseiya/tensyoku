@@ -21,14 +21,13 @@ class CompanyController extends Controller
      return view('list', compact('companies'), compact('companyNumbers'));
   }
 
-  public function detail()
-  {
-      // DBよりBookテーブルの値を全て取得
-     $companies = Company::all();
 
-     // 取得した値をビュー「book/index」に渡す
-     return view('detail', compact('companies'));
+  public function detail($company_apply_id)
+  {
+    $detail = Company::findOrFail($company_apply_id);
+    return view('detail', ['detail' => $detail]);
   }
+
 
   public function info()
   {

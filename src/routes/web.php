@@ -13,10 +13,10 @@
 
 
 Auth::routes();
-//1.企業一覧ページ（最初のページ）
+//企業一覧ページ（最初のページ）
 Route::get('/', 'CompanyController@list')->name('list');
 
-//2.転職サイト紹介ページ
+//転職サイト紹介ページ
 Route::get('/info', 'CompanyController@info')->name('info');
 
 //会員登録後のログイン完了画面
@@ -25,7 +25,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 //ユーザー情報紹介画面
 Route::get('/profile', 'HomeController@profile')->name('profile');
 
-//1.企業一覧ページ（詳細ページ）
+//企業一覧ページ（詳細ページ）
 Route::get('/{company_apply_id}', 'CompanyController@detail')->name('detail');
 
 

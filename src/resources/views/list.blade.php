@@ -18,8 +18,32 @@
             <li class="py-md-4"><a href="#">メッセージを確認する</a></li>
 　　　　　　　@endif
          </ul>
+
+<h3>検索</h3>
+ 
+<form action="{{url('/')}}" method="GET">
+    <p>
+    気になるワードのみの検索<br>
+    <input type="text" name="keyword" value="{{$keyword}}">
+    </p>
+    <br>
+    <p>絞り込み用</p>
+    <p>
+    希望年収<br>
+    <input type="number" name="company_job_salary" value="{{$company_job_salary}}">万円以上</p>
+
+    <p>
+    スキル<br>
+    <input type="checkbox" name="company_job_skill[]" value="PHP"> <label>PHP</label></p>
+    <p><input type="checkbox" name="company_job_skill[]" value="JAVA"> <label>JAVA</label></p>
+    <p><input type="checkbox" name="company_job_skill[]" value="Ruby"> <label>Ruby</label></p>
+    <p><input type="checkbox" name="company_job_skill[]" value="Javascript"> <label>Javascript</label></p>
+
+    <p><input type="submit" value="検索"></p>
+</form>
+
         </div>
-        <div class="col offset-3" id="main">
+        <div class="col offset-3" id="main">    
         <table class="table text-center">
     　<tr>
     　<th>募集</th>

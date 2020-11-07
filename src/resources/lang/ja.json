@@ -29,5 +29,6 @@
 "password": "パスワード",
 "year": "経験年数",
 "position": "職種",
-"skill": "スキル"
+"skill": "スキル",
+"company_name": "会社名（管理者）"
 }

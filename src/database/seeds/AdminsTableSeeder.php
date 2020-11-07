@@ -18,7 +18,9 @@ class AdminsTableSeeder extends Seeder
     $admins = [
               ['company_id' => 1,
                'company_name' => 2500,
-               'company_password' => '12345abc',
+               'email' => 'ozaworld.s2090227.1990@gmail.com',
+               'password' => '12345abc',
+               'remember_token'    => Str::random(10),
                'company_apply_id' => 1,
                'message_category_id' => 1
                ]
@@ -26,7 +28,7 @@ class AdminsTableSeeder extends Seeder
 
     // 登録
     foreach($admins as $admin) {
-      \App\Admin::create($admin);
+      \App\Models\Admin::create($admin);
     }
     }
 }

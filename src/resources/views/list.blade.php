@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.user.app')
 
 @section('content')
 <div class="container ops-main">
@@ -26,8 +26,6 @@
     気になるワードのみの検索<br>
     <input type="text" name="keyword" value="{{$keyword}}">
     </p>
-    <br>
-    <p>絞り込み用</p>
     <p>
     希望年収<br>
     <input type="number" name="company_job_salary" value="{{$company_job_salary}}">万円以上</p>

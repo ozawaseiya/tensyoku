@@ -20,6 +20,7 @@ class UsersTableSeeder extends Seeder
                'name' => '田中太郎',
                'email' => 'tanaka@gmail.com',
                'password' => '12345abc',
+               'remember_token'    => Str::random(10),
                'year' => 1,
                'position' => 'バックエンドエンジニア',
                'skill' => 'PHP',
@@ -29,7 +30,7 @@ class UsersTableSeeder extends Seeder
 
     // 登録
     foreach($users as $user) {
-      \App\User::create($user);
+      \App\Models\User::create($user);
     }
     }
 }

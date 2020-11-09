@@ -73,5 +73,4 @@ class CompanyController extends Controller
      return view('info');
   }
 
-     
 }

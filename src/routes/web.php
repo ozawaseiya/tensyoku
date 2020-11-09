@@ -1,15 +1,6 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+
 
 // ユーザー認証関連
 Route::namespace('User')->prefix('user')->name('user.')->group(function () {
@@ -50,6 +41,8 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
 
 });
 
+//企業用管理トップページ
+Route::get('/admin', 'AdminController@admin')->name('admin');
 
 //企業一覧ページ（最初のページ）
 Route::get('/', 'CompanyController@list')->name('list');

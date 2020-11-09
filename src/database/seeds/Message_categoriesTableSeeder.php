@@ -17,7 +17,8 @@ class Message_categoriesTableSeeder extends Seeder
     // 初期データ用意（列名をキーとする連想配列）
     $message_categories = [
               ['message_category_id' => 1,
-               'sender' => 1
+               'sender' => 'メッサーシュミットジャパン',
+               'created_at' => '2020-11-07'
               ]
              ];
 

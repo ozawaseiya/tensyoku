@@ -32,26 +32,31 @@ class CompanyController extends Controller
         $company = Company::all();
         // Companyテーブルに存在する企業数を取得
         $companyNumbers = $company->count();
- 
-        if (!empty($keyword)) {
-            $query->where('company_name', 'LIKE', "%{$keyword}%")
+
+
+    if (!empty($keyword)) {
+      $query->where(function($query) use ($keyword) {
+          $query->where('company_name', 'LIKE', "%{$keyword}%")
                 ->orWhere('company_service', 'LIKE', "%{$keyword}%")
                 ->orWhere('company_job_skill', 'LIKE', "%{$keyword}%")
                 ->orWhere('company_apply_job', 'LIKE', "%{$keyword}%");
-        }
- 
-        if (!empty($company_job_salary)) {
-            $query->where('company_job_salary', '>=', $company_job_salary);
-        }
+     });
+    }
 
-        if (!empty($company_job_skill)) {
-          $query->Where('company_job_skill',  '=', $company_job_skill);
-        } 
- 
+    if (!empty($company_job_salary)) {
+      $query->where('company_job_salary', '>=', $company_job_salary);
+    }
+
+
+    if (!empty($company_job_skill)) {
+    $query->WhereIn('company_job_skill', $company_job_skill);
+    }
+    
+    var_dump($company_job_skill);
 
         $companies = $query->get();
 
-        return view('list', compact('companies', 'companyNumbers',  'keyword', 'company_job_salary'));
+        return view('list', compact('companies', 'companyNumbers',  'keyword', 'company_job_salary', 'company_job_skill'));
     }
 
 

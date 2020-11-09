@@ -16,7 +16,7 @@
 
                     会員登録が完了しました!
                     <br><br>
-                    <a href="{{ route('list') }}">一覧画面に戻る</a>
+                    <a href="{{ route('admin') }}">管理画面へ進む</a>
 
                 </div>
             </div>

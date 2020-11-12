@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Company;
 
+
 class CompanyController extends Controller
 {
 
@@ -29,7 +30,7 @@ class CompanyController extends Controller
         $query = Company::query();
 
         // DBよりCompanyテーブルの値を全て取得
-        $company = Company::all();
+        $company = Company::paginate(5);
         // Companyテーブルに存在する企業数を取得
         $companyNumbers = $company->count();
 
@@ -51,10 +52,8 @@ class CompanyController extends Controller
     if (!empty($company_job_skill)) {
     $query->WhereIn('company_job_skill', $company_job_skill);
     }
-    
-    var_dump($company_job_skill);
 
-        $companies = $query->get();
+        $companies = $query->paginate(5);
 
         return view('list', compact('companies', 'companyNumbers',  'keyword', 'company_job_salary', 'company_job_skill'));
     }
@@ -72,5 +71,6 @@ class CompanyController extends Controller
   {
      return view('info');
   }
+
 
 }

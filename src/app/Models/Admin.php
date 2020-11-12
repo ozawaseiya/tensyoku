@@ -6,11 +6,24 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+
 class Admin extends Authenticatable
 {
     use Notifiable;
 
 
+    public function companies()
+    {
+    return $this->hasMany('App\Company');
+    }
+
+
+    public function message_categories()
+    {
+        return $this->hasMany('App\Message_category');
+    }
+
+    
     protected $primaryKey = 'company_id';
     /**
      * The attributes that are mass assignable.

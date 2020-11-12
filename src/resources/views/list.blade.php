@@ -32,7 +32,6 @@
 
 　　 <p>スキル</p>
     
-    
     <p><input type="checkbox" name="company_job_skill[]" value="PHP"{{ is_array(old("company_job_skill")) && in_array("PHP", old("company_job_skill"), true)? 'checked' : '' }}><label>PHP（テスト用）</label></p>
     <p><input type="checkbox" name="company_job_skill[]"  value="PHP" ><label>PHP</label></p>
     <p><input type="checkbox" name="company_job_skill[]" value="JAVA"> <label>JAVA</label></p>
@@ -69,6 +68,10 @@
       </tr>
       @endforeach
     </table>
+    <br><br>
+    <div class="d-flex justify-content-center mb-5">
+    {{ $companies->links() }}
+    </div>  
         </div>
     </div>
 </div>

@@ -15,6 +15,7 @@ class CreateCompaniesTable extends Migration
     {
         Schema::create('companies', function (Blueprint $table) {
             $table->bigIncrements('company_apply_id');
+            $table->integer('company_id');
             $table->string('company_name');
             $table->string('company_service');
             $table->string('company_apply_job');

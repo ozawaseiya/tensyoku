@@ -15,7 +15,10 @@ class CreateMessageCategoriesTable extends Migration
     {
         Schema::create('message_categories', function (Blueprint $table) {
             $table->bigIncrements('message_category_id');
-            $table->string('sender');
+            $table->integer('company_apply_id');
+            $table->string('sender_name');
+            $table->integer('id')->nullable();
+            $table->integer('company_id')->nullable();
             $table->timestamps();
         });
     }

@@ -16,7 +16,7 @@ class AdminsTableSeeder extends Seeder
 
     // 初期データ用意（列名をキーとする連想配列）
     $admins = [
-              ['company_id' => 1,
+              ['company_id' => 3,
                'company_name' => 'テスト',
                'email' => 'ozaworld.s2090227.1990@gmail.com',
                'password' => bcrypt('12345abc'),

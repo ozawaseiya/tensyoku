@@ -41,8 +41,18 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
 
 });
 
-//企業用管理トップページ
+
+//管理者用求人閲覧ページ
+Route::get('/admin/read', 'AdminController@read')->name('admin.read');
+
+
+//管理者用求人管理ページ
+Route::resource('/admin', 'AdminController', ['only' => ['create', 'store', 'show', 'edit', 'update', 'destroy']]);
+
+
+//管理者用トップページ
 Route::get('/admin', 'AdminController@admin')->name('admin');
+
 
 //企業一覧ページ（最初のページ）
 Route::get('/', 'CompanyController@list')->name('list');
@@ -57,18 +67,8 @@ Route::get('/profile', 'HomeController@profile')->name('profile');
 Route::get('/{company_apply_id}', 'CompanyController@detail')->name('detail');
 
 
-
-
-
-
-//.ユーザーメッセージ送信ページ
-    //Route::post('message/{id}', 'LoginController@messageShow')->name('message');
-    //Route::post('message/{id}/send', 'LoginController@messageSendForm')->name('send');
-    //Route::post('message/{id}/send', 'LoginController@messageSend');
-
-//.企業メッセージ送信ページ
-    //Route::post('admin/message/{company_manage_id}', 'AdminLoginController@message')->name('admin.message');
-    //Route::post('admin/message/{company_manage_id}/send', 'AdminLoginController@messageSendForm')->name('admin.send');
-    //Route::post('admin/message/{company_manage_id}', 'AdminLoginController@messageSend');
+//企業からのメッセージ送信機能
+Route::get('/admin/message/read', 'Message_categoryController@read')->name('admin.message.read');
+Route::resource('admin/message', 'Message_categoryController', ['only' => ['create', 'store', 'show', 'edit', 'update', 'destroy']]);
  
 

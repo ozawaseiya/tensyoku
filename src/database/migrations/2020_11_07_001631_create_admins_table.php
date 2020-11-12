@@ -19,8 +19,8 @@ class CreateAdminsTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->integer('company_apply_id');
-            $table->integer('message_category_id');
+            $table->integer('company_apply_id')->nullable();
+            $table->integer('message_category_id')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

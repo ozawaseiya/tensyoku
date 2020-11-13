@@ -9,7 +9,7 @@ class Company extends Model
     protected $primaryKey = 'company_apply_id';
 
 
-    public function admin()
+    public function admins()
     {
         return $this->belongsTo('App\Models\Admin', 'company_id');
     }

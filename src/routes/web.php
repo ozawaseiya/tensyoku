@@ -68,7 +68,6 @@ Route::get('/{company_apply_id}', 'CompanyController@detail')->name('detail');
 
 
 //企業からのメッセージ送信機能
-Route::get('/admin/message/read', 'Message_categoryController@read')->name('admin.message.read');
-Route::resource('admin/message', 'Message_categoryController', ['only' => ['create', 'store', 'show', 'edit', 'update', 'destroy']]);
+Route::get('/admin/folders/{id}/messages', 'MessageController@index')->name('admin.messages.index');
  
 

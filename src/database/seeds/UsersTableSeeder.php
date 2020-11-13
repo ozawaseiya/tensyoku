@@ -24,7 +24,7 @@ class UsersTableSeeder extends Seeder
                'year' => 1,
                'position' => 'バックエンドエンジニア',
                'skill' => 'PHP',
-               'message_category_id' => 1
+               'folder_id' => 1
                ]
              ];
 

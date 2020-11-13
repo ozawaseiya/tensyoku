@@ -18,9 +18,9 @@ class Admin extends Authenticatable
     }
 
 
-    public function message_categories()
+    public function folders()
     {
-        return $this->hasMany('App\Message_category');
+        return $this->hasMany('App\Folder');
     }
 
     

@@ -32,7 +32,7 @@ class CompanyController extends Controller
         // DBよりCompanyテーブルの値を全て取得
         $company = Company::paginate(5);
         // Companyテーブルに存在する企業数を取得
-        $companyNumbers = $company->count();
+        $companyNumbers = Company::all()->count();
 
 
     if (!empty($keyword)) {

@@ -22,7 +22,7 @@ class AdminsTableSeeder extends Seeder
                'password' => bcrypt('12345abc'),
                'remember_token'    => Str::random(10),
                'company_apply_id' => 1,
-               'message_category_id' => 1
+               'folder_id' => 1
                ]
              ];
 

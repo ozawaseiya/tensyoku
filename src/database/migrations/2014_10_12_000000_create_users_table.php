@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->integer('year');
             $table->string('position');
             $table->string('skill');
-            $table->integer('message_category_id')->nullable();
+            $table->integer('folder_id')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

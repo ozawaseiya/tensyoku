@@ -20,7 +20,7 @@ class CreateAdminsTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->integer('company_apply_id')->nullable();
-            $table->integer('message_category_id')->nullable();
+            $table->integer('folder_id')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

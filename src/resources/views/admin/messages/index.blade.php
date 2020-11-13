@@ -26,7 +26,7 @@
           </div>
           <div class="list-group">
             @foreach($folders as $folder)
-              <a href="{{ route('messages.index', ['folder_id' => $folder->folder_id]) }}" class="list-group-item">
+              <a href="{{ route('messages.index', ['id' => $folder->id]) }}" class="list-group-item">
                 {{ $folder->title }}
               </a>
             @endforeach

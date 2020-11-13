@@ -14,8 +14,8 @@ class CreateCompaniesTable extends Migration
     public function up()
     {
         Schema::create('companies', function (Blueprint $table) {
-            $table->bigIncrements('company_apply_id');
-            $table->integer('company_id');
+            $table->bigIncrements('id');
+            $table->bigInteger('company_id');
             $table->string('company_name');
             $table->string('company_service');
             $table->string('company_apply_job');
@@ -25,6 +25,10 @@ class CreateCompaniesTable extends Migration
             $table->integer('company_member_number');
             $table->integer('company_job_salary');
             $table->timestamps();
+
+            // 外部キーを設定する
+            $table->foreign('id')->references('company_apply_id')->on('admins');
+            $table->foreign('company_id')->references('id')->on('admins');
         });
     }
 

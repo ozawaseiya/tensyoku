@@ -6,16 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Company extends Model
 {
-    protected $primaryKey = 'company_apply_id';
-
-
     public function admins()
     {
-        return $this->belongsTo('App\Models\Admin', 'company_id');
+        return $this->belongsTo('App\Models\Admin');
     }
 
     protected $fillable = [
-        'company_id',
+        'id',
         'company_name',
         'company_service',
         'company_apply_job',

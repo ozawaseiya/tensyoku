@@ -23,8 +23,6 @@ class Admin extends Authenticatable
         return $this->hasMany('App\Folder');
     }
 
-    
-    protected $primaryKey = 'company_id';
     /**
      * The attributes that are mass assignable.
      *

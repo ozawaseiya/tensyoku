@@ -16,10 +16,10 @@ class FoldersTableSeeder extends Seeder
 
     // 初期データ用意（列名をキーとする連想配列）
     $folders = [
-              ['folder_id' => 1,
+              ['id' => 1,
                'company_apply_id' => 1,
                'sender_name' => 'メッサーシュミットジャパン',
-               'id' => 1,
+               'user_id' => 1,
                'company_id' => 3,
               ]
              ];

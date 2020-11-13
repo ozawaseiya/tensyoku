@@ -14,11 +14,14 @@ class CreateMessagesTable extends Migration
     public function up()
     {
         Schema::create('messages', function (Blueprint $table) {
-            $table->bigIncrements('message_id');
-            $table->integer('folder_id');
+            $table->bigIncrements('id');
+            $table->bigInteger('folder_id');
             $table->string('sender_name');
             $table->string('interview_message');
             $table->timestamps();
+
+            // 外部キーを設定する
+            $table->foreign('folder_id')->references('id')->on('folders');
         });
     }
 

@@ -53,7 +53,7 @@ class AdminController extends Controller
 
     Company::create($companies);
 
-    return redirect()->route('admin');
+    return redirect()->route('admin.read');
    }
 
 
@@ -91,7 +91,7 @@ class AdminController extends Controller
     $company = Company::findOrFail($company_apply_id);
     $company->fill($params)->save();
     
-    return redirect()->route('admin.show', ['company' => $company, $company->company_apply_id]);
+    return redirect()->route('admin.show', ['company' => $company, $company->id]);
    }
 
 

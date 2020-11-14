@@ -20,11 +20,10 @@ class FoldersTableSeeder extends Seeder
           //     ['id' => 1,
           //      'company_apply_id' => 1,
           //      'sender_name' => 'メッサーシュミットジャパン',
-          //      'user_id' => 1,
+          //      'user_id' => NuLL,
           //     ]
              ];
-
-
+             
     // 登録
     foreach($folders as $folder) {
       \App\Folder::create($folder);

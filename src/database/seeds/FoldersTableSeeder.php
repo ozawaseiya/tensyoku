@@ -17,11 +17,18 @@ class FoldersTableSeeder extends Seeder
 
     // 初期データ用意（列名をキーとする連想配列）
     $folders = [
-          //     ['id' => 1,
-          //      'company_apply_id' => 1,
-          //      'sender_name' => 'メッサーシュミットジャパン',
-          //      'user_id' => NuLL,
-          //     ]
+              [
+               'id' => 1,
+               'company_apply_id' => 1,
+               'sender_name' => '田中太郎',
+               'user_id' => 1
+              ],
+              [
+               'id' => 1,
+               'company_apply_id' => 2,
+               'sender_name' => '石川太郎',
+               'user_id' => 2
+              ]
              ];
              
     // 登録

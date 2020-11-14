@@ -8,7 +8,12 @@ class Company extends Model
 {
     public function admins()
     {
-        return $this->belongsTo('App\Models\Admin', 'company_id');
+        return $this->belongsTo('App\Models\Admin');
+    }
+
+    public function folders()
+    {
+        return $this->hasMany('App\Folder');
     }
 
     protected $fillable = [

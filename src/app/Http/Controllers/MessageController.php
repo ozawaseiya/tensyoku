@@ -8,13 +8,14 @@ use Illuminate\Support\Facades\Auth;
 
 class MessageController extends Controller
 {
-    public function index()
+    public function index($company_apply_id)
     {
 
-    $companyId = Auth::guard('admin')->user()->id;
+    $id = Auth::guard('admin')->user()->id;
 
-    $folders = Folder::where('id',$companyId);
-
+    $folders = Folder::where('id', $company_apply_id)->get();
+    
+    
     return view('admin.messages.index', ['folders' => $folders]);
     }
 }

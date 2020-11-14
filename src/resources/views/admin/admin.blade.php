@@ -13,15 +13,15 @@
         <div class="col-3 px-1 position-fixed" id="sticky-sidebar">
         <ul class="nav  nav-stacked　d-flex flex-column py-md-4">
             @if((Auth::guard('admin')->check()))
-            <li class="py-md-4"><a href="#">応募者からのメッセージを確認する</a></li>
             <li class="py-md-4"><a href="{{ route('admin.read')}}">募集要項を確認する</a></li>
             <li class="py-md-4"><a href="{{ route('admin.create')}}">募集職種を作成する</a></li>
 　　　　　　　@endif
          </ul>
         </div>
         <div class="col offset-3" id="main">
-        
-    <br><br>
+        <h4>この管理画面について</h4>
+        <br><br>
+        <p>これは企業用管理画面です。左側のサイドバーメニューから求人管理や応募者とのやりとりができます。</p>
         </div>
     </div>
 </div>

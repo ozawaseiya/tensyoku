@@ -16,7 +16,7 @@ class CreateCompaniesTable extends Migration
     {
         Schema::create('companies', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->BigInteger('company_id')->unsigned();
+            $table->unsignedBigInteger('company_id');
             $table->string('company_name');
             $table->string('company_service');
             $table->string('company_apply_job');
@@ -26,12 +26,13 @@ class CreateCompaniesTable extends Migration
             $table->integer('company_member_number');
             $table->integer('company_job_salary');
             $table->timestamps();
+
         });
 
-        Schema::table('companies', function($table) {
-            // 外部キーを設定する
-            $table->foreign('company_id')->references('id')->on('admins')->onUpdate('cascade')->onDelete('cascade');
-        });
+        // Schema::table('companies', function($table) {
+        //     // 外部キーを設定する
+        //     $table->foreign('company_id')->references('id')->on('admins')->onUpdate('cascade')->onDelete('cascade');
+        // });
 
     }
 

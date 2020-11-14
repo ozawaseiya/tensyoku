@@ -17,11 +17,11 @@ class MessagesTableSeeder extends Seeder
 
     // 初期データ用意（列名をキーとする連想配列）
     $messages = [
-              // ['id' => 1,
-              //  'folder_id' => 1,
-              //  'sender_name' => 'メッサーシュミットジャパン',
-              //  'interview_message' => '面接に来てくださいね'
-              // ]
+              ['id' => 1,
+               'folder_id' => 1,
+               'sender_name' => 'メッサーシュミットジャパン',
+               'interview_message' => '面接に来てくださいね'
+              ]
              ];
 
     // 登録

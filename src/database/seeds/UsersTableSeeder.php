@@ -26,6 +26,16 @@ class UsersTableSeeder extends Seeder
                'position' => 'バックエンドエンジニア',
                'skill' => 'PHP',
                'folder_id' => NULL
+              ],
+              ['id' => 2,
+               'name' => '石川太郎',
+               'email' => 'ishikawa@gmail.com',
+               'password' => '12345abc',
+               'remember_token'    => Str::random(10),
+               'year' => 1,
+               'position' => 'フロントエンドエンジニア',
+               'skill' => 'PHP',
+               'folder_id' => NULL
                ]
              ];
 

@@ -68,6 +68,6 @@ Route::get('/{company_apply_id}', 'CompanyController@detail')->name('detail');
 
 
 //企業からのメッセージ送信機能
-Route::get('/admin/folders/{id}/messages', 'MessageController@index')->name('admin.messages.index');
+Route::get('/admin/folders/{id}/messages', 'MessageController@index')->name('messages.index');
  
 

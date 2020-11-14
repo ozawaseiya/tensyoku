@@ -17,12 +17,6 @@ class Admin extends Authenticatable
     return $this->hasMany('App\Company');
     }
 
-
-    public function folders()
-    {
-        return $this->hasMany('App\Folder');
-    }
-
     /**
      * The attributes that are mass assignable.
      *

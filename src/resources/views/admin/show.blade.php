@@ -50,6 +50,8 @@
         この求人を編集する
     </a>
     <br><br>
+    <a href="{{ route('messages.index', $company_apply_id = $company->id) }}">応募者からのメッセージを確認する</a>
+    <br><br>
 
     <form style="display: inline-block;" method="POST" action="{{ route('admin.destroy', $company_apply_id = $company->id)}}">
     @csrf

@@ -12,8 +12,8 @@ class CompaniesTableSeeder extends Seeder
     public function run()
     {
         // テーブルのクリア
-    //DB::table('companies')->truncate();
-    DB::table('companies')->delete();
+    DB::table('companies')->truncate();
+    //DB::table('companies')->delete();
     
 
     // 初期データ用意（列名をキーとする連想配列）

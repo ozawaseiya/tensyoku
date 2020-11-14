@@ -37,7 +37,7 @@
      </tr>
       @foreach($applies as $apply)
       <tr>
-        <td>{{ $apply->id }}</td>
+        <td>{{ $loop->iteration }}</td>
         <td>
         <a href="{{ route('admin.show', $company_apply_id = $apply->id) }}">この求人を見る</a>
         </td>

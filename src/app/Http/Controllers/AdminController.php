@@ -24,7 +24,7 @@ class AdminController extends Controller
     {
       $recruit = Auth::guard('admin')->user()->id;
 
-      $applies = Company::where('id',$recruit)->paginate(5);
+      $applies = Company::where('company_id',$recruit)->paginate(5);
       
        return view('admin.read', ['applies' => $applies]);
     }

@@ -11,9 +11,9 @@ class MessageController extends Controller
     public function index()
     {
 
-    $companyId = Auth::guard('admin')->user()->company_id;
+    $companyId = Auth::guard('admin')->user()->id;
 
-    $folders = Folder::where('company_id',$companyId);
+    $folders = Folder::where('id',$companyId);
 
     return view('admin.messages.index', ['folders' => $folders]);
     }

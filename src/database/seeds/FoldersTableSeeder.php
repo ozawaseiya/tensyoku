@@ -12,16 +12,16 @@ class FoldersTableSeeder extends Seeder
     public function run()
     {
          // テーブルのクリア
-    DB::table('folders')->truncate();
+    //DB::table('folders')->truncate();
+    DB::table('folders')->delete();
 
     // 初期データ用意（列名をキーとする連想配列）
     $folders = [
-              ['id' => 1,
-               'company_apply_id' => 1,
-               'sender_name' => 'メッサーシュミットジャパン',
-               'user_id' => 1,
-               'company_id' => 3,
-              ]
+          //     ['id' => 1,
+          //      'company_apply_id' => 1,
+          //      'sender_name' => 'メッサーシュミットジャパン',
+          //      'user_id' => 1,
+          //     ]
              ];
 
 

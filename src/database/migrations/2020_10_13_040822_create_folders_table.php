@@ -15,18 +15,18 @@ class CreateFoldersTable extends Migration
     {
         Schema::create('folders', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('company_apply_id');
+            $table->unsignedBigInteger('company_apply_id');
             $table->string('sender_name');
-            $table->bigInteger('user_id')->nullable();
-            $table->bigInteger('company_id')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->timestamps();
 
+        });
+
+        Schema::table('folders', function($table) {
             // 外部キーを設定する
-            $table->foreign('company_id')->references('id')->on('admins');
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             // 外部キーを設定する
-            $table->foreign('user_id')->references('id')->on('users');
-            // 外部キーを設定する
-            $table->foreign('company_apply_id')->references('id')->on('companies');
+            $table->foreign('company_apply_id')->references('id')->on('companies')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

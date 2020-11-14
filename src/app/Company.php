@@ -8,11 +8,11 @@ class Company extends Model
 {
     public function admins()
     {
-        return $this->belongsTo('App\Models\Admin');
+        return $this->belongsTo('App\Models\Admin', 'company_id');
     }
 
     protected $fillable = [
-        'id',
+        'company_id',
         'company_name',
         'company_service',
         'company_apply_job',

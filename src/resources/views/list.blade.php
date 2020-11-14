@@ -56,9 +56,9 @@
      </tr>
       @foreach($companies as $company)
       <tr>
-        <td>{{ $company->company_apply_id }}</td>
+        <td>{{ $company->id }}</td>
         <td>
-        <a href="{{ action('CompanyController@detail', $company->company_apply_id) }}">この求人を見る</a>
+        <a href="{{ action('CompanyController@detail', $company->id) }}">この求人を見る</a>
         </td>
         <td>{{ $company->company_name }}</td>
         <td>{{ $company->company_service }}</td>

@@ -4,6 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+
 class CreateCompaniesTable extends Migration
 {
     /**
@@ -15,7 +16,7 @@ class CreateCompaniesTable extends Migration
     {
         Schema::create('companies', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('company_id');
+            $table->BigInteger('company_id')->unsigned();
             $table->string('company_name');
             $table->string('company_service');
             $table->string('company_apply_job');
@@ -25,11 +26,13 @@ class CreateCompaniesTable extends Migration
             $table->integer('company_member_number');
             $table->integer('company_job_salary');
             $table->timestamps();
-
-            // 外部キーを設定する
-            $table->foreign('id')->references('company_apply_id')->on('admins');
-            $table->foreign('company_id')->references('id')->on('admins');
         });
+
+        Schema::table('companies', function($table) {
+            // 外部キーを設定する
+            $table->foreign('company_id')->references('id')->on('admins')->onUpdate('cascade')->onDelete('cascade');
+        });
+
     }
 
     /**

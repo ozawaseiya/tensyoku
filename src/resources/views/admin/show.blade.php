@@ -46,12 +46,12 @@
     </table>
         
     <br>
-    <a href="{{ route('admin.edit', $company_apply_id = $company->company_apply_id) }}">
+    <a href="{{ route('admin.edit', $company_apply_id = $company->id) }}">
         この求人を編集する
     </a>
     <br><br>
 
-    <form style="display: inline-block;" method="POST" action="{{ route('admin.destroy', $company_apply_id = $company->company_apply_id)}}">
+    <form style="display: inline-block;" method="POST" action="{{ route('admin.destroy', $company_apply_id = $company->id)}}">
     @csrf
     @method('DELETE')
 

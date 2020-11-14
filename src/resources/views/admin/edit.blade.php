@@ -23,18 +23,18 @@
         <h3>募集職種の内容</h3>
         <br>
 
-        　　　<form method="POST" action="{{ route('admin.update', $company_apply_id = $company->company_apply_id)  }}">
+        　　　<form method="POST" action="{{ route('admin.update', $company_apply_id = $company->id)  }}">
                 @csrf
                 @method('PUT')
 
                 <input id="company_id" name="company_id"
-                       value="<?php print Auth::guard('admin')->user()->company_id; ?>"
+                       value="<?php print Auth::guard('admin')->user()->id; ?>"
                        type="hidden"> 
 
                 <input
                        id="company_apply_id"
                        name="company_apply_id"
-                       value="{{ $company->company_apply_id }}"
+                       value="{{ $company->id }}"
                        type="hidden">
 
                 <fieldset class="mb-4">
@@ -190,7 +190,7 @@
 
 
                     <div class="mt-5">
-                        <a class="btn btn-secondary" href="{{ route('admin.show', $company_apply_id = $company->company_apply_id)  }}">
+                        <a class="btn btn-secondary" href="{{ route('admin.show', $company_apply_id = $company->id)  }}">
                             キャンセル
                         </a>
 

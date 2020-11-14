@@ -15,13 +15,17 @@ class CreateMessagesTable extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('folder_id');
+            $table->unsignedBigInteger('folder_id');
             $table->string('sender_name');
             $table->string('interview_message');
             $table->timestamps();
 
+        });
+
+        Schema::table('messages', function($table) {
             // 外部キーを設定する
-            $table->foreign('folder_id')->references('id')->on('folders');
+            $table->foreign('folder_id')->references('id')->on('folders')->onUpdate('cascade')->onDelete('cascade');
+      
         });
     }
 

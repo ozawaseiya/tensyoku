@@ -39,7 +39,7 @@
       <tr>
         <td>{{ $apply->company_apply_id }}</td>
         <td>
-        <a href="{{ route('admin.show', $company_apply_id = $apply->company_apply_id) }}">この求人を見る</a>
+        <a href="{{ route('admin.show', $company_apply_id = $apply->id) }}">この求人を見る</a>
         </td>
         <td>{{ $apply->company_name }}</td>
         <td>{{ $apply->company_service }}</td>

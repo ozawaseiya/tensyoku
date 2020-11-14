@@ -28,7 +28,7 @@
                 @csrf
 
                 <input id="company_id" name="company_id"
-                       value="<?php print Auth::guard('admin')->user()->company_id; ?>"
+                       value="<?php print Auth::guard('admin')->user()->id; ?>"
                        type="hidden"> 
        
                 <fieldset class="mb-4">

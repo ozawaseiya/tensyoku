@@ -36,7 +36,7 @@ class UsersTableSeeder extends Seeder
                'position' => 'フロントエンドエンジニア',
                'skill' => 'PHP',
                'folder_id' => NULL
-              ],
+              ]
              ];
 
     // 登録

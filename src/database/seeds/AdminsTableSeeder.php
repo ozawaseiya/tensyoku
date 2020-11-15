@@ -20,7 +20,7 @@ class AdminsTableSeeder extends Seeder
               ['id' => 1,
                'company_apply_id' => 1,
                'company_name' => 'テスト1',
-               'email' => 'ozaworld.s2090220.1990@gmail.com',
+               'email' => 'ozaworld.s2090227.1990@gmail.com',
                'password' => bcrypt('12345abc'),
                'remember_token'    => Str::random(10),
               ]

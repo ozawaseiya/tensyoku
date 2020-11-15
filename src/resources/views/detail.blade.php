@@ -36,7 +36,11 @@
         <td>{{ $detail->company_job_salary }}</td>
       </tr>
     </table>
-    <a href="">この求人に応募する</a>
+    @if (Auth::guard('user')->check())
+    <a href="{{ route('create', $id = $detail->id )}}">この求人に応募する</a>
+    <br><br>
+    <a href="{{ route('show', $id = $detail->id )}}">応募情報を見る</a>
+    @endif
     <br><br>
     <a href="{{ route('list') }}">一覧に戻る</a>
         </div>

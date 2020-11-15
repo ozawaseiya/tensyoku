@@ -16,14 +16,14 @@
 <main>
   <div class="container">
     <div class="row">
-      <div class="col col-md-4">
+      <div class="col col-md-5">
         <nav class="panel panel-default">
           <div class="panel-heading">応募者からのメッセージ用のフォルダ</div>
           <div class="panel-body">
           </div>
           <div class="list-group">
             @foreach($folders as $folder)
-              <a href="{{ route('messages.index', ['id' => $folder->id]) }}" class="list-group-item">
+              <a href="{{ route('messages.data', $current_folder_id = $folder->id) }}" class="list-group-item">
                 {{ $folder->sender_name }}
               </a>
             @endforeach
@@ -31,10 +31,9 @@
         </nav>
       </div>
       <div class="column col-md-8">
-
       </div>
     </div>
-    <a href="{{ route('admin') }}">トップページに戻る</a>
+    <a href="{{ route('admin.read') }}">募集要項一覧のページに戻る</a>
   </div>
 </main>
 </body>

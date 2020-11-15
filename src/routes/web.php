@@ -45,16 +45,26 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
 //管理者用求人閲覧ページ
 Route::get('/admin/read', 'AdminController@read')->name('admin.read');
 
-
 //管理者用求人管理ページ
 Route::resource('/admin', 'AdminController', ['only' => ['create', 'store', 'show', 'edit', 'update', 'destroy']]);
-
 
 //管理者用トップページ
 Route::get('/admin', 'AdminController@admin')->name('admin');
 
+//ユーザー応募ページ作成
+Route::get('/{company_apply_id}/create', 'MessageController@create')->name('create');
 
-//企業一覧ページ（最初のページ）
+//ユーザー応募ページ保存
+Route::post('/{company_apply_id}/store', 'MessageController@store')->name('store');
+
+//ユーザー応募ページ表示
+Route::get('/{company_apply_id}/show', 'MessageController@show')->name('show');
+
+//企業詳細ページ
+Route::get('/{company_apply_id}', 'CompanyController@detail')->name('detail');
+
+
+//企業一覧ページ
 Route::get('/', 'CompanyController@list')->name('list');
 
 //転職サイト紹介ページ
@@ -63,11 +73,10 @@ Route::get('/info', 'CompanyController@info')->name('info');
 //ユーザー情報紹介画面
 Route::get('/profile', 'HomeController@profile')->name('profile');
 
-//企業一覧ページ（詳細ページ）
-Route::get('/{company_apply_id}', 'CompanyController@detail')->name('detail');
 
 
 //企業からのメッセージ送信機能
 Route::get('/admin/folders/{id}/messages', 'MessageController@index')->name('messages.index');
- 
+Route::get('/admin/folders/{id}/messages/data', 'MessageController@data')->name('messages.data');
+
 

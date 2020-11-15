@@ -19,8 +19,11 @@ class MessagesTableSeeder extends Seeder
     $messages = [
               ['id' => 1,
                'folder_id' => 1,
-               'sender_name' => 'メッサーシュミットジャパン',
-               'interview_message' => '面接に来てくださいね'
+               'interview_message' => '御社の面接に行きたいです'
+              ],
+              ['id' => 2,
+               'folder_id' => 2,
+               'interview_message' => '私を御社の面接に行かせてください！'
               ]
              ];
 

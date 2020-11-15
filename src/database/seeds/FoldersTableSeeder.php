@@ -25,7 +25,7 @@ class FoldersTableSeeder extends Seeder
               ],
               [
                'id' => 2,
-               'company_apply_id' => 2,
+               'company_apply_id' => 1,
                'sender_name' => '石川太郎',
                'user_id' => 2
               ]

@@ -20,8 +20,8 @@ class UsersTableSeeder extends Seeder
               ['id' => 1,
                'name' => '田中太郎',
                'email' => 'tanaka@gmail.com',
-               'password' => '12345abc',
-               'remember_token'    => Str::random(10),
+               'password' => bcrypt('12345abc'),
+               'remember_token' => Str::random(10),
                'year' => 1,
                'position' => 'バックエンドエンジニア',
                'skill' => 'PHP',
@@ -30,13 +30,13 @@ class UsersTableSeeder extends Seeder
               ['id' => 2,
                'name' => '石川太郎',
                'email' => 'ishikawa@gmail.com',
-               'password' => '12345abc',
-               'remember_token'    => Str::random(10),
+               'password' => bcrypt('12345abc'),
+               'remember_token' => Str::random(10),
                'year' => 1,
                'position' => 'フロントエンドエンジニア',
                'skill' => 'PHP',
                'folder_id' => NULL
-               ]
+              ],
              ];
 
     // 登録

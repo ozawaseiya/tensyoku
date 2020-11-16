@@ -29,10 +29,10 @@ class CreateCompaniesTable extends Migration
 
         });
 
-        // Schema::table('companies', function($table) {
-        //     // 外部キーを設定する
-        //     $table->foreign('company_id')->references('id')->on('admins')->onUpdate('cascade')->onDelete('cascade');
-        // });
+        Schema::table('companies', function($table) {
+            // 外部キーを設定する
+            $table->foreign('company_id')->references('id')->on('admins')->onUpdate('cascade')->onDelete('cascade');
+        });
 
     }
 

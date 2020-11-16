@@ -44,6 +44,7 @@ class CompanyController extends Controller
 
         $companies = $query->paginate(5);
 
+
         return view('list', compact('companies', 'companyNumbers',  'keyword', 'company_job_salary', 'company_job_skill'));
     }
 

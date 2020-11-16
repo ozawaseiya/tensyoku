@@ -21,51 +21,60 @@
         </div>
         <div class="col offset-3" id="main">
         <div class="col offset-3" id="main">
-        <h3>募集職種の作成</h3>
+        <h3>応募用メッセージの作成</h3>
         <br>
 
 
-        <form method="POST" action="{{ route('store') }}">
+        <form method="POST" action="{{ route('store', $id) }}">
                 @csrf
 
-                <input id="company_id" name="company_id"
+                <input id="company_apply_id" name="company_apply_id"
+                       value="{{ $id }}"
+                       type="hidden"> 
+
+
+                <input id="folder_id" name="folder_id"
+                       value="{{ $folder+1 }}"
+                       type="hidden"> 
+
+
+                <input id="user_id" name="user_id"
                        value="<?php print Auth::user()->id; ?>"
                        type="hidden"> 
        
                 <fieldset class="mb-4">
                     <div class="form-group">
-                        
-                        <label for="name">
+                        <label for="sender_name">
                             応募者名
                         </label>
                         <input
-                            id="name"
-                            name="name"
+                            id="sender_name"
+                            name="sender_name"
                             class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}"
-                            value="{{ old('name') }}"
+                            value="<?php print Auth::user()->name; ?>"
                             type="text"
                         >
-                        @if ($errors->has('name'))
+                        @if ($errors->has('sender_name'))
                             <div class="invalid-feedback">
-                                {{ $errors->first('name') }}
+                                {{ $errors->first('sender_name') }}
                             </div>
                         @endif
                     </div>
 
                     <div class="form-group">
-                        <label for="company_service">
-                            サービス内容
+                        <label for="interview_message">
+                            応募メッセージ内容
                         </label>
                         <input
-                            id="company_service"
-                            name="company_service"
-                            class="form-control {{ $errors->has('company_service') ? 'is-invalid' : '' }}"
-                            value="{{ old('company_service') }}"
+                            id="interview_message"
+                            name="interview_message"
+                            class="form-control {{ $errors->has('interview_message') ? 'is-invalid' : '' }}"
+                            value="{{ old('interview_message') }}"
                             type="text"
                         >
-                        @if ($errors->has('company_service'))
+                        @if ($errors->has('interview_message'))
                             <div class="invalid-feedback">
-                                {{ $errors->first('company_service') }}
+                                {{ $errors->first('interview_message') }}
                             </div>
                         @endif
                     </div>
@@ -77,7 +86,7 @@
                         </a>
 
                         <button type="submit" class="btn btn-primary">
-                            作成する
+                            応募メッセージを送信する
                         </button>
                     </div>
                 </fieldset>

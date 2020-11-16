@@ -63,7 +63,6 @@ Route::get('/{company_apply_id}/show', 'MessageController@show')->name('show');
 //企業詳細ページ
 Route::get('/{company_apply_id}', 'CompanyController@detail')->name('detail');
 
-
 //企業一覧ページ
 Route::get('/', 'CompanyController@list')->name('list');
 

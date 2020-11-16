@@ -10,4 +10,9 @@ class Message extends Model
     {
         return $this->belongsTo('App\Folder');
     }
+
+    protected $fillable = [
+        'folder_id',
+        'interview_message' 
+      ];
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Folder;
 use App\Message;
+use App\Company;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -31,40 +32,58 @@ class MessageController extends Controller
 
     $message = Message::where('folder_id', $company_apply_id)->first();
 
+
     return view('admin.messages.data', ['message' => $message, 'user' => $user]);
     }
 
 
     //ユーザー側からの求人応募
 
-    public function create()
-    {
-    return view('create');
+    public function create($id)
+    {  
+
+    $folder = Folder::all()->count('id');
+
+    return view('create', ['id' => $id, 'folder' => $folder]);
     }
  
 
     public function store(Request $request)
     {
+
+    $folders = $request->validate([
+            'company_apply_id' => 'required|max:30',
+            'sender_name' => 'required|max:30',
+            'user_id' => 'required|max:30'
+    ]);
+    
+    Folder::create($folders);
  
-     $companies = $request->validate([
-         'company_id' => 'required|max:30',
-         'name' => 'required|max:30'
-     ]);
+     $messages = $request->validate([
+         'folder_id' => 'required|max:30',
+         'interview_message' => 'required|max:30'
+    ]);
  
-     Company::create($companies);
+    Message::create($messages);
  
      return redirect()->route('list');
     }
  
     
-    public function show($company_apply_id)
+    public function show($id)
     {
- 
-     $company = Company::findOrFail($company_apply_id);
- 
-     return view('show', ['company' => $company]);
+    
+    $user = Auth::user();
+
+    $folder = Folder::where('id', $id)->first();
+
+    $folder_id = $folder->id;
+
+    $message = Message::where('folder_id', $folder_id)->first();
+    
+
+    return view('show', ['message' => $message, 'user' => $user]);
     }
  
-
 
 }

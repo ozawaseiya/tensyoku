@@ -15,7 +15,7 @@
             <li class="active py-md-3"><a href="{{ route('info') }}">この転職サイトについて</a></li>
             @if( Auth::check() )
             <li class="py-md-4"><a href="{{ route('profile') }}">個人プロフィールを見る</a></li>
-            <li class="py-md-4"><a href="#">メッセージを確認する</a></li>
+            <li class="py-md-4"><a href="#">応募メッセージを確認する</a></li>
 　　　　　　　@endif
          </ul>
 
@@ -31,13 +31,12 @@
     <input type="number" name="company_job_salary" value="{{$company_job_salary}}">万円以上</p>
 
 　　 <p>スキル</p>
-    <p><input type="checkbox" name="company_job_skill[]" value="PHP" {{ is_array(old("company_job_skill")) && in_array("PHP", old("company_job_skill"), true)? 'checked' : '' }}><label>PHP（テスト用）</label></p>
-    <p><input type="checkbox" name="company_job_skill[]"  value="PHP" ><label>PHP</label></p>
-    <p><input type="checkbox" name="company_job_skill[]" value="JAVA"> <label>JAVA</label></p>
-    <p><input type="checkbox" name="company_job_skill[]" value="RUBY"> <label>Ruby</label></p>
-    <p><input type="checkbox" name="company_job_skill[]" value="Javascript"> <label>Javascript</label></p>
 
-
+    <p><input type="checkbox" name="company_job_skill[]" value="PHP" {{ is_array($company_job_skill)&& in_array('PHP', $company_job_skill, true)? 'checked' : '' }}><label>PHP</label></p>
+    <p><input type="checkbox" name="company_job_skill[]" value="JAVA" {{ is_array($company_job_skill)&& in_array('JAVA', $company_job_skill, true)? 'checked' : '' }}><label>JAVA</label></p>
+    <p><input type="checkbox" name="company_job_skill[]" value="Ruby" {{ is_array($company_job_skill)&& in_array('Ruby', $company_job_skill, true)? 'checked' : '' }}><label>Ruby</label></p>
+    <p><input type="checkbox" name="company_job_skill[]" value="Javascript" {{ is_array($company_job_skill)&& in_array('Javascript', $company_job_skill, true)? 'checked' : '' }}><label>Javascript</label></p>
+ 
     <p><input type="submit" value="検索"></p>
 </form>
 

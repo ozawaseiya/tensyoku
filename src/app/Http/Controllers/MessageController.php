@@ -70,20 +70,44 @@ class MessageController extends Controller
     }
  
     
-    public function show($id)
+    // public function show($id)
+    // {
+    
+    // $user = Auth::user();
+
+    // $folder = Folder::where('id', $id)->first();
+
+    // $folder_id = $folder->id;
+
+    // $message = Message::where('folder_id', $folder_id)->first();
+    
+
+    // return view('show', ['message' => $message, 'user' => $user]);
+    // }
+
+
+    //ユーザー側からの求人確認
+
+    public function folder()
+    {
+
+    $id = Auth::user()->id;
+
+    $folders = Folder::where('user_id', $id)->get();
+
+    return view('messages.folder', ['folders' => $folders]);
+    }
+
+
+    public function message($folder_id)
     {
     
-    $user = Auth::user();
-
-    $folder = Folder::where('id', $id)->first();
-
-    $folder_id = $folder->id;
+    $folder  =  Folder::where('id', $folder_id)->get();
 
     $message = Message::where('folder_id', $folder_id)->first();
-    
 
-    return view('show', ['message' => $message, 'user' => $user]);
+    return view('messages.message', ['message' => $message, 'folder' => $folder]);
     }
- 
+
 
 }

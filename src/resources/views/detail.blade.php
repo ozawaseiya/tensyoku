@@ -37,9 +37,13 @@
       </tr>
     </table>
     @if (Auth::guard('user')->check())
+    @if ($apply === Auth::user()->name)
+    <p>この求人に応募済みです</p>
+    @else
     <a href="{{ route('create', $id = $detail->id )}}">この求人に応募する</a>
+    @endif
     <br><br>
-    <a href="{{ route('show', $id = $detail->id )}}">応募情報を見る</a>
+    <!-- <a href="{{ route('show', $id = $detail->id )}}">応募情報を見る</a> -->
     @endif
     <br><br>
     <a href="{{ route('list') }}">一覧に戻る</a>

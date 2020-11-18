@@ -57,8 +57,8 @@ Route::get('/{company_apply_id}/create', 'MessageController@create')->name('crea
 //ユーザー応募ページ保存
 Route::post('/{company_apply_id}/store', 'MessageController@store')->name('store');
 
-//ユーザー応募ページ表示
-Route::get('/{company_apply_id}/show', 'MessageController@show')->name('show');
+// //ユーザー応募ページ表示
+// Route::get('/{company_apply_id}/show', 'MessageController@show')->name('show');
 
 
 //企業一覧ページ
@@ -75,6 +75,14 @@ Route::get('/profile', 'HomeController@profile')->name('profile');
 //企業からのメッセージ送信機能
 Route::get('/admin/folders/{id}/messages', 'MessageController@index')->name('messages.index');
 Route::get('/admin/folders/{id}/messages/data', 'MessageController@data')->name('messages.data');
+
+
+
+//ユーザーからのメッセージ送信機能
+Route::get('/messages/folder', 'MessageController@folder')->name('messages.folder');
+Route::get('/messages/{$folder_id}/message', 'MessageController@message')->name('messages.message');
+
+
 
 //企業詳細ページ
 Route::get('/{company_apply_id}', 'CompanyController@detail')->name('detail');

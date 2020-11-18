@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Company;
-
+use App\Folder;
 
 class CompanyController extends Controller
 {
@@ -53,7 +53,16 @@ class CompanyController extends Controller
   public function detail($company_apply_id)
   {
     $detail = Company::findOrFail($company_apply_id);
-    return view('detail', ['detail' => $detail]);
+
+    $folder = Folder::find($company_apply_id);
+
+    if ($folder == NULL ) {
+      $apply = NULL;
+    } else {
+      $apply = $folder->sender_name;
+    }
+
+    return view('detail', ['detail' => $detail, 'apply' => $apply]);
   }
 
 

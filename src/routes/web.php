@@ -17,6 +17,7 @@ Route::namespace('User')->prefix('user')->name('user.')->group(function () {
 
         // TOPページ
         Route::resource('home', 'HomeController', ['only' => 'index']);
+       
 
     });
 });
@@ -41,6 +42,8 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
 
 });
 
+//管理者削除
+Route::get('/admin/admindestroy', 'AdminController@admindestroy')->name('admin.admindestroy');
 
 //管理者用求人閲覧ページ
 Route::get('/admin/read', 'AdminController@read')->name('admin.read');
@@ -50,6 +53,8 @@ Route::resource('/admin', 'AdminController', ['only' => ['create', 'store', 'sho
 
 //管理者用トップページ
 Route::get('/admin', 'AdminController@admin')->name('admin');
+
+
 
 //ユーザー応募ページ作成
 Route::get('/{company_apply_id}/create', 'MessageController@create')->name('create');
@@ -70,6 +75,8 @@ Route::get('/info', 'CompanyController@info')->name('info');
 //ユーザー情報紹介画面
 Route::get('/profile', 'HomeController@profile')->name('profile');
 
+//ユーザー削除
+Route::get('/profile/destroy', 'HomeController@destroy')->name('destroy');
 
 
 //企業からのメッセージ送信機能

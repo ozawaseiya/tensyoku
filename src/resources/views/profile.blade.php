@@ -36,8 +36,10 @@
         <td>{{ Auth::user()->skill }}</td>
       </tr>
     </table>
-    <br><br>
     <a href="{{ route('list') }}">一覧に戻る</a>
+　　<br><br>
+   <br><br>
+   <a href="{{ action('HomeController@destroy') }}">このサイトから退会する</a>
         </div>
     </div>
 </div>

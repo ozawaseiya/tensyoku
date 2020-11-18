@@ -103,4 +103,18 @@ class AdminController extends Controller
     return redirect()->route('admin.read');
    }
 
+
+   public function admindestroy() {
+
+      $id = Auth::guard('admin')->user()->id;
+
+      Auth::guard('admin')->logout(); // ログアウト
+      Admin::where('id', $id)->delete();
+      //$table = Admin::findOrFail($id);
+      //$table->delete(); // 管理者が削除される。
+  
+      return view('admin.admindestroy');
+  }
+
+  
 }

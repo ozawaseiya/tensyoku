@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -26,4 +27,14 @@ class HomeController extends Controller
     {
         return view('profile');
     }
+
+    public function destroy () {
+        $user = Auth::user();
+    
+        Auth::logout(); // ログアウト
+        $user->delete(); // ユーザが削除される。
+    
+        return redirect("/");
+    }
+    
 }

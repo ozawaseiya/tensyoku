@@ -1,7 +1,5 @@
 <?php
 
-
-
 // ユーザー認証関連
 Route::namespace('User')->prefix('user')->name('user.')->group(function () {
 
@@ -15,8 +13,8 @@ Route::namespace('User')->prefix('user')->name('user.')->group(function () {
     // ログイン認証後
     Route::middleware('auth:user')->group(function () {
 
-        // TOPページ
-        Route::resource('home', 'HomeController', ['only' => 'index']);
+    // TOPページ
+    Route::resource('home', 'HomeController', ['only' => 'index']);
        
 
     });
@@ -35,8 +33,8 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
     // ログイン認証後
     Route::middleware('auth:admin')->group(function () {
 
-        // TOPページ
-        Route::resource('home', 'HomeController', ['only' => 'index']);
+    // TOPページ
+    Route::resource('home', 'HomeController', ['only' => 'index']);
 
     });
 
@@ -55,15 +53,11 @@ Route::resource('/admin', 'AdminController', ['only' => ['create', 'store', 'sho
 Route::get('/admin', 'AdminController@admin')->name('admin');
 
 
-
 //ユーザー応募ページ作成
 Route::get('/{company_apply_id}/create', 'MessageController@create')->name('create');
 
 //ユーザー応募ページ保存
 Route::post('/{company_apply_id}/store', 'MessageController@store')->name('store');
-
-// //ユーザー応募ページ表示
-// Route::get('/{company_apply_id}/show', 'MessageController@show')->name('show');
 
 
 //企業一覧ページ
@@ -84,11 +78,9 @@ Route::get('/admin/folders/{id}/messages', 'MessageController@index')->name('mes
 Route::get('/admin/folders/{id}/messages/data', 'MessageController@data')->name('messages.data');
 
 
-
 //ユーザーからのメッセージ送信機能
 Route::get('/messages/folder', 'MessageController@folder')->name('messages.folder');
 Route::get('/messages/{$folder_id}/message', 'MessageController@message')->name('messages.message');
-
 
 
 //企業詳細ページ

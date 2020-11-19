@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use App\Company;
 use App\Folder;
 
@@ -56,10 +57,18 @@ class CompanyController extends Controller
 
     $folder = Folder::find($company_apply_id);
 
-    if ($folder == NULL ) {
-      $apply = NULL;
+    if (Auth::guard('user')->check()) {
+    
+      if (empty($folder->sender_name)) {
+        $apply = NULL;
+      } else if ($folder->sender_name != NULL) {
+        $apply = $folder->sender_name;
+      } else {
+        $apply = NULL;
+      }
+    
     } else {
-      $apply = $folder->sender_name;
+        $apply = NULL;
     }
 
     return view('detail', ['detail' => $detail, 'apply' => $apply]);

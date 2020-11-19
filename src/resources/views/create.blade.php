@@ -63,8 +63,9 @@
 
                     <div class="form-group">
                         <label for="interview_message">
-                            応募メッセージ内容
+                            応募メッセージ内容（ユーザーのプロフィール情報は自動送信されます）
                         </label>
+                        
                         <input
                             id="interview_message"
                             name="interview_message"

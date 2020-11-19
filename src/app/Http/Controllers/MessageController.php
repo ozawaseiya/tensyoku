@@ -69,22 +69,6 @@ class MessageController extends Controller
      return redirect()->route('list');
     }
  
-    
-    // public function show($id)
-    // {
-    
-    // $user = Auth::user();
-
-    // $folder = Folder::where('id', $id)->first();
-
-    // $folder_id = $folder->id;
-
-    // $message = Message::where('folder_id', $folder_id)->first();
-    
-
-    // return view('show', ['message' => $message, 'user' => $user]);
-    // }
-
 
     //ユーザー側からの求人確認
 

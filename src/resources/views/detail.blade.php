@@ -15,7 +15,6 @@
             <li class="active py-md-3"><a href="{{ route('info') }}">この転職サイトについて</a></li>
             @if( Auth::check() )
             <li class="py-md-4"><a href="{{ route('profile') }}">個人プロフィールを見る</a></li>
-            <li class="py-md-4"><a href="#">メッセージを確認する</a></li>
 　　　　　　　@endif
          </ul>
         </div>
@@ -37,13 +36,11 @@
       </tr>
     </table>
     @if (Auth::guard('user')->check())
-    @if ($apply === Auth::user()->name)
+    @if ( $apply == Auth::user()->name )
     <p>この求人に応募済みです</p>
     @else
     <a href="{{ route('create', $id = $detail->id )}}">この求人に応募する</a>
     @endif
-    <br><br>
-    <!-- <a href="{{ route('show', $id = $detail->id )}}">応募情報を見る</a> -->
     @endif
     <br><br>
     <a href="{{ route('list') }}">一覧に戻る</a>

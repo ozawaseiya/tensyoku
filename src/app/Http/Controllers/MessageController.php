@@ -37,6 +37,17 @@ class MessageController extends Controller
     }
 
 
+    public function datadestroy($folder_id) {
+
+        $folder = Folder::where('id', $folder_id)->first();
+    
+        $folder->delete(); 
+    
+        return redirect()->route("admin");
+    }
+
+
+
     //ユーザー側からの求人応募
 
     public function create($id)
@@ -90,7 +101,7 @@ class MessageController extends Controller
     
     $folder = Folder::findOrFail($folder_id);
 
-    $message = Message::find('folder_id', $folder_id)->first();
+    $message = Message::find('folder_id', $folder_id)->firstOrFail();
 
     return view('messages.message', ['message' => $message, 'folder' => $folder]);
     }

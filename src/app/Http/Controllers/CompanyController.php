@@ -53,7 +53,8 @@ class CompanyController extends Controller
 
   public function detail($company_apply_id)
   {
-    $detail = Company::findOrFail($company_apply_id);
+
+    $detail = Company::find($company_apply_id);
 
     if (Auth::guard('user')->check()) {
 
@@ -79,6 +80,5 @@ class CompanyController extends Controller
   {
      return view('info');
   }
-
 
 }

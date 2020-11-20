@@ -9,8 +9,8 @@
 </head>
 <body>
 <header>
-  <nav class="my-navbar">
-    <a class="my-navbar-brand" href="/">メッセージ</a>
+<nav class="my-navbar">
+    <a class="my-navbar-brand" href="/admin">管理画面トップページへ</a>
   </nav>
 </header>
 <main>

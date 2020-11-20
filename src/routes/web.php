@@ -73,16 +73,22 @@ Route::get('/profile', 'HomeController@profile')->name('profile');
 Route::get('/profile/destroy', 'HomeController@destroy')->name('destroy');
 
 
-//企業からのメッセージ送信機能
+//ユーザーからのメッセージ確認機能
 Route::get('/admin/folders/{id}/messages', 'MessageController@index')->name('messages.index');
 Route::get('/admin/folders/{id}/messages/data', 'MessageController@data')->name('messages.data');
+
+//企業から応募メッセージ削除
+Route::get('/admin/folders/{id}/messages/data/datadestroy', 'MessageController@datadestroy')->name('messages.datadestroy');
+
+
+//企業からメッセージ返信機能
+//Route::get('/admin/folders/{id}/messages/data', 'MessageController@')->name('messages.data');
+
 
 
 //ユーザーからのメッセージ送信機能
 Route::get('/messages/{$folder_id}/message', 'MessageController@message')->name('messages.message');
 Route::get('/messages/folder', 'MessageController@folder')->name('messages.folder');
-
-
 
 //企業詳細ページ
 Route::get('/{company_apply_id}', 'CompanyController@detail')->name('detail');

@@ -9,8 +9,8 @@
 </head>
 <body>
 <header>
-  <nav class="my-navbar">
-    <a class="my-navbar-brand" href="/">企業からのメッセージ</a>
+<nav class="my-navbar">
+    <a class="my-navbar-brand" href="/">未経験エンジニア転職サイト</a>
   </nav>
 </header>
 <main>

@@ -10,7 +10,7 @@
 <body>
 <header>
   <nav class="my-navbar">
-    <a class="my-navbar-brand" href="/">メッセージ</a>
+    <a class="my-navbar-brand" href="/admin">管理画面トップページへ</a>
   </nav>
 </header>
 <main>
@@ -46,9 +46,11 @@
         </nav>
       </div>
       <div class="column col-md-8">
+      <a href="{{ url()->previous() }}">前のページに戻る</a>
       </div>
     </div>
-    <a href="{{ url()->previous() }}">前のページに戻る</a>
+    <br><br>
+    <a class="btn btn-danger" href="{{ route('messages.datadestroy', $folder_id = $message->folder_id) }}">この応募を削除する</a>
   </div>
 </main>
 </body>

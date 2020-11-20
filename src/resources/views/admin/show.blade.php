@@ -52,6 +52,8 @@
     <a href="{{ route('messages.index', $company_apply_id = $company->id) }}">応募者からのメッセージを確認する</a>
     <br><br>
 
+    <a href="{{ route('admin.read') }}">現在募集している職種のページに戻る</a>
+    <br><br>
     <form style="display: inline-block;" method="POST" action="{{ route('admin.destroy', $company_apply_id = $company->id)}}">
     @csrf
     @method('DELETE')
@@ -59,8 +61,6 @@
     <button class="btn btn-danger">削除する</button>
    </form>
 
-    <br><br>
-    <a href="{{ route('admin.read') }}">現在募集している職種のページに戻る</a>
         </div>
     </div>
 </div>

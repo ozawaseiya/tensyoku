@@ -9,7 +9,8 @@
 </head>
 <body>
 <header>
-  <nav class="my-navbar">
+<nav class="my-navbar">
+    <a class="my-navbar-brand" href="/">未経験エンジニア転職サイト</a>
   </nav>
 </header>
 <main>
@@ -22,9 +23,14 @@
           </div>
           <div class="list-group">
           @foreach($folders as $folder)
+          @if ($folder->company_name == NULL)
+          <p>企業からのメッセージはありません</p>
+          <br>
+          @else
           <a href="{{ route('messages.message', $folder_id = $folder->id)}}" class="list-group-item">
           {{ $folder->company_name }}
           </a>
+          @endif
           @endforeach
           </div>
         </nav>

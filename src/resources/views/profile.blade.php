@@ -38,7 +38,7 @@
     <a href="{{ route('list') }}">一覧に戻る</a>
 　　<br><br>
    <br><br>
-   <a href="{{ action('HomeController@destroy') }}">このサイトから退会する</a>
+   <a class="btn btn-danger" href="{{ action('HomeController@destroy') }}">このサイトから退会する</a>
         </div>
     </div>
 </div>

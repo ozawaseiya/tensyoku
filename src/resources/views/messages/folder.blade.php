@@ -10,7 +10,6 @@
 <body>
 <header>
   <nav class="my-navbar">
-    メッセージ
   </nav>
 </header>
 <main>
@@ -24,7 +23,7 @@
           <div class="list-group">
           @foreach($folders as $folder)
           <a href="{{ route('messages.message', $folder_id = $folder->id)}}" class="list-group-item">
-          {{ $folder->sender_name }}
+          {{ $folder->company_name }}
           </a>
           @endforeach
           </div>

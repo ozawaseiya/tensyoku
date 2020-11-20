@@ -37,7 +37,7 @@
     </table>
     @if (Auth::guard('user')->check())
     @if ( $apply == Auth::user()->name )
-    <p>この求人に応募済みです</p>
+    <p>この求人に既に応募済みです</p>
     @else
     <a href="{{ route('create', $id = $detail->id )}}">この求人に応募する</a>
     @endif

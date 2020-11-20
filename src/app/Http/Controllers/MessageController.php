@@ -70,6 +70,8 @@ class MessageController extends Controller
     }
  
 
+
+
     //ユーザー側からの求人確認
 
     public function folder()
@@ -86,9 +88,9 @@ class MessageController extends Controller
     public function message($folder_id)
     {
     
-    $folder  =  Folder::where('id', $folder_id)->get();
+    $folder = Folder::findOrFail($folder_id);
 
-    $message = Message::where('folder_id', $folder_id)->first();
+    $message = Message::find('folder_id', $folder_id)->first();
 
     return view('messages.message', ['message' => $message, 'folder' => $folder]);
     }

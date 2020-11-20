@@ -79,8 +79,9 @@ Route::get('/admin/folders/{id}/messages/data', 'MessageController@data')->name(
 
 
 //ユーザーからのメッセージ送信機能
-Route::get('/messages/folder', 'MessageController@folder')->name('messages.folder');
 Route::get('/messages/{$folder_id}/message', 'MessageController@message')->name('messages.message');
+Route::get('/messages/folder', 'MessageController@folder')->name('messages.folder');
+
 
 
 //企業詳細ページ

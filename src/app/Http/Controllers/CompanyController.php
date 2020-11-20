@@ -55,18 +55,18 @@ class CompanyController extends Controller
   {
     $detail = Company::findOrFail($company_apply_id);
 
-    $folder = Folder::find($company_apply_id);
-
     if (Auth::guard('user')->check()) {
-    
+
+      $name = Auth::user()->name;
+
+      $folder = Folder::where('sender_name', $name)->where('company_apply_id', $company_apply_id)->first();
+
       if (empty($folder->sender_name)) {
         $apply = NULL;
-      } else if ($folder->sender_name != NULL) {
-        $apply = $folder->sender_name;
       } else {
-        $apply = NULL;
-      }
-    
+        $apply = Auth::user()->name;
+      } 
+
     } else {
         $apply = NULL;
     }

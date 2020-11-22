@@ -48,6 +48,34 @@ class MessageController extends Controller
     }
 
 
+    
+
+    //メッセージ返信機能(フォルダー内にメッセージ追加)
+
+    public function reply($id) {
+
+        $folder = Folder::where('id', $id)->first();
+    
+        return view('admin.messages.reply', ['folder' => $folder]);
+    }
+ 
+    public function replystore(Request $request, $folder_id)
+    {
+
+    Folder::where('id', $folder_id)->update(['company_name' => Auth::guard('admin')->user()->company_name]);
+
+    $messages = $request->validate([
+        'folder_id' => 'required|max:30',
+        'interview_message' => 'required|max:30'
+    ]);
+ 
+    Message::create($messages);
+ 
+     return redirect()->route('admin.read');
+    }
+
+
+
 
     //ユーザー側からの求人応募
 
@@ -93,18 +121,18 @@ class MessageController extends Controller
 
     $folders = Folder::where('user_id', $id)->get();
 
-    return view('messages.folder', ['folders' => $folders]);
+    return view('apply.folder', ['folders' => $folders]);
     }
 
 
     public function message($folder_id)
     {
     
-    $folder = Folder::findOrFail($folder_id);
+    $folder = Folder::find($folder_id);
 
-    $message = Message::find('folder_id', $folder_id)->firstOrFail();
+    $message = Message::find('folder_id', $folder_id)->first();
 
-    return view('messages.message', ['message' => $message, 'folder' => $folder]);
+    return view('apply.message', ['message' => $message, 'folder' => $folder]);
     }
 
 

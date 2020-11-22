@@ -72,7 +72,6 @@ Route::get('/profile', 'HomeController@profile')->name('profile');
 //ユーザー削除
 Route::get('/profile/destroy', 'HomeController@destroy')->name('destroy');
 
-
 //ユーザーからのメッセージ確認機能
 Route::get('/admin/folders/{id}/messages', 'MessageController@index')->name('messages.index');
 Route::get('/admin/folders/{id}/messages/data', 'MessageController@data')->name('messages.data');
@@ -80,15 +79,13 @@ Route::get('/admin/folders/{id}/messages/data', 'MessageController@data')->name(
 //企業から応募メッセージ削除
 Route::get('/admin/folders/{id}/messages/data/datadestroy', 'MessageController@datadestroy')->name('messages.datadestroy');
 
-
-//企業からメッセージ返信機能
-//Route::get('/admin/folders/{id}/messages/data', 'MessageController@')->name('messages.data');
-
-
+//企業からメッセージ返信機能(フォルダー内にメッセージ追加)
+Route::get('/admin/folders/{id}/messages/reply', 'MessageController@reply')->name('admin.messages.reply');
+Route::post('/admin/folders/{id}/messages/replystore', 'MessageController@replystore')->name('admin.messages.replystore');
 
 //ユーザーからのメッセージ送信機能
-Route::get('/messages/{$folder_id}/message', 'MessageController@message')->name('messages.message');
-Route::get('/messages/folder', 'MessageController@folder')->name('messages.folder');
+Route::get('/apply/folder', 'MessageController@folder')->name('apply.folder');
+Route::get('/apply/{$folder_id}/message', 'MessageController@message')->name('apply.message');
 
 //企業詳細ページ
 Route::get('/{company_apply_id}', 'CompanyController@detail')->name('detail');

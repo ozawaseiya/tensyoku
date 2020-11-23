@@ -39,7 +39,11 @@
     @if ( $apply == Auth::user()->name )
     <p>この求人に既に応募済みです</p>
     @else
+    @if ($detail->company_job_stop === NULL)
     <a href="{{ route('create', $id = $detail->id )}}">この求人に応募する</a>
+    @else 
+    <p>この求人は募集停止中です！</p>
+    @endif
     @endif
     @endif
     <br><br>

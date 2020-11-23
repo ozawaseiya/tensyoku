@@ -56,7 +56,7 @@
       <tr>
         <td>{{ $loop->iteration }}</td>
         <td>
-        <a href="{{ action('CompanyController@detail',  $company_apply_id = $company->id) }}">この求人を見る</a>
+        <a href="{{ action('CompanyController@detail', $company_apply_id = $company->id) }}">この求人を見る</a>
         </td>
         <td>{{ $company->company_name }}</td>
         <td>{{ $company->company_service }}</td>

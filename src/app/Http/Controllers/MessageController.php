@@ -46,8 +46,6 @@ class MessageController extends Controller
     
         return redirect()->route("admin");
     }
-
-
     
 
     //メッセージ返信機能(フォルダー内にメッセージ追加)
@@ -74,8 +72,6 @@ class MessageController extends Controller
  
      return redirect()->route('admin.read');
     }
-
-
 
 
     //ユーザー側からの求人応募
@@ -153,7 +149,8 @@ class MessageController extends Controller
     public function apply($folder_id)
     {
     
-    $folder = Folder::where('id', $folder_id)->first();
+    
+    $folder = Folder::where('id', $folder_id)->firstOrFail();
 
     $messages = Message::where('folder_id', $folder_id)->get();
 

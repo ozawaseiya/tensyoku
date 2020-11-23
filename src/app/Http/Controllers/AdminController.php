@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Admin;
 use App\Company;
+use App\Folder;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -27,6 +28,21 @@ class AdminController extends Controller
       $applies = Company::where('company_id',$recruit)->paginate(5);
       
        return view('admin.read', ['applies' => $applies]);
+    }
+
+    //求人募集停止
+
+    public function stop($company_apply_id)
+    {
+    $company = Company::where('id', $company_apply_id)->first();
+
+    $params = ([
+      'company_job_stop' => '募集停止'
+    ]);
+
+    $company->fill($params)->save();
+      
+     return view('admin.stop');
     }
 
 
@@ -62,7 +78,9 @@ class AdminController extends Controller
 
     $company = Company::findOrFail($company_apply_id);
 
-    return view('admin.show', ['company' => $company]);
+    $folder = Folder::where('company_apply_id', $company_apply_id)->first();
+
+    return view('admin.show', ['company' => $company, 'folder' => $folder]);
    }
 
    public function edit($company_apply_id){

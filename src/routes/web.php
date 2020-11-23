@@ -46,6 +46,9 @@ Route::get('/admin/admindestroy', 'AdminController@admindestroy')->name('admin.a
 //管理者用求人閲覧ページ
 Route::get('/admin/read', 'AdminController@read')->name('admin.read');
 
+//管理者用募集停止ページ
+Route::get('/admin/{company_apply_id}/stop', 'AdminController@stop')->name('admin.stop');
+
 //管理者用求人管理ページ
 Route::resource('/admin', 'AdminController', ['only' => ['create', 'store', 'show', 'edit', 'update', 'destroy']]);
 

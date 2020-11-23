@@ -54,13 +54,21 @@
 
     <a href="{{ route('admin.read') }}">現在募集している職種のページに戻る</a>
     <br><br>
+    @if ($company->company_job_stop === NULL)
+    <a href="{{ route('admin.stop', $company_apply_id = $company->id) }}">この募集を停止する</a>
+    @else
+    <p>既に募集停止中です！！！</p>
+    @endif
+    <br><br>
+    @if ( $folder == NULL )
+    <p style="color:red">＊現在応募者がいないため、いつでも削除可能です</p>
     <form style="display: inline-block;" method="POST" action="{{ route('admin.destroy', $company_apply_id = $company->id)}}">
     @csrf
     @method('DELETE')
 
     <button class="btn btn-danger">削除する</button>
    </form>
-
+    @endif
         </div>
     </div>
 </div>

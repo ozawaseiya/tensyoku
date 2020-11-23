@@ -23,8 +23,8 @@
           </div>
           <div class="list-group">
             @foreach($folders as $folder)
-              <a href="{{ route('messages.data', $current_folder_id = $folder->id) }}" class="list-group-item">
-                {{ $folder->sender_name }}
+            <a href="{{ route('messages.data', $current_folder_id = $folder->id) }}" class="list-group-item">
+            {{ $loop->iteration }}{{ $folder->sender_name }}
               </a>
             @endforeach
           </div>

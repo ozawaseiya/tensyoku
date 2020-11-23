@@ -32,9 +32,9 @@ class MessageController extends Controller
 
     $id = $folder->id;
 
-    $message = Message::where('id', $id)->first();
+    $messages = Message::where('folder_id', $id)->get();
 
-    return view('admin.messages.data', ['message' => $message, 'user' => $user]);
+    return view('admin.messages.data', ['messages' => $messages, 'user' => $user]);
     }
 
 
@@ -66,6 +66,7 @@ class MessageController extends Controller
 
     $messages = $request->validate([
         'folder_id' => 'required|max:30',
+        'name' => 'required|max:30',
         'interview_message' => 'required|max:30'
     ]);
  
@@ -101,17 +102,42 @@ class MessageController extends Controller
  
      $messages = $request->validate([
          'folder_id' => 'required|max:30',
-         'interview_message' => 'required|max:30'
+         'interview_message' => 'required|max:30',
+         'name' => 'required|max:30'
     ]);
  
     Message::create($messages);
  
      return redirect()->route('list');
     }
+
+
+    
+    //ユーザー側から企業への返信
+
+    public function recreate($id)
+    {  
+
+    $id = Folder::find($id);
+
+    return view('recreate', ['id' => $id]);
+    }
+ 
+    public function restore(Request $request, $id)
+    {
+     $messages = $request->validate([
+         'folder_id' => 'required|max:30',
+         'name' => 'required|max:30',
+         'interview_message' => 'required|max:30'
+    ]);
+ 
+     Message::create($messages);
+ 
+     return redirect()->route('list');
+    }
  
 
-
-
+ 
     //ユーザー側からの求人確認
 
     public function folder()
@@ -123,17 +149,14 @@ class MessageController extends Controller
 
     return view('apply.folder', ['folders' => $folders]);
     }
-
-
-    public function message($folder_id)
+    
+    public function apply($folder_id)
     {
     
-    $folder = Folder::find($folder_id);
+    $folder = Folder::where('id', $folder_id)->first();
 
-    $message = Message::find('folder_id', $folder_id)->first();
+    $messages = Message::where('folder_id', $folder_id)->get();
 
-    return view('apply.message', ['message' => $message, 'folder' => $folder]);
+    return view('apply.message', ['messages' => $messages, 'folder' => $folder]);
     }
-
-
 }

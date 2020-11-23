@@ -19,21 +19,21 @@
       <div class="col col-md-8">
         <nav class="panel panel-default">
           <div class="panel-heading">
-          {{ $folder->company_name }}からの応募メッセージとプロフィール
+          あなたと「{{ $folder->company_name }}」とのメッセージのやり取り
           </div>
           <div class="panel-body">
           </div>
           <div class="list-group">
           @foreach($messages as $message)
-               <p> {{ $loop->iteration }}{{ $message->interview_message }}</p>
+               <p>{{ $message->name }} : {{ $message->interview_message }}（{{ $message->created_at }}）</p>
           @endforeach
                <br><br>
           </div>
         </nav>
       </div>
-      <div class="column col-md-8">
-      </div>
     </div>
+    <a href="{{ route('recreate', $id = $folder->id) }}">企業にメッセージを送信する</a>
+    <br><br>
     <a href="{{ url()->previous() }}">前のページに戻る</a>
   </div>
 </main>

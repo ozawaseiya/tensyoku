@@ -24,7 +24,9 @@
           <div class="panel-body">
           </div>
           <div class="list-group">
-               <p> {{ $message->interview_message }}</p>
+          @foreach($messages as $message)
+               <p>{{ $message->name }} : {{ $message->interview_message }}（{{ $message->created_at }}）</p>
+          @endforeach
                <br><br>
     <table class="table text-center">
     　<tr>

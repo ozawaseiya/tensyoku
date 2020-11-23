@@ -13,6 +13,7 @@ class Message extends Model
 
     protected $fillable = [
         'folder_id',
-        'interview_message' 
+        'name',
+        'interview_message'
       ];
 }

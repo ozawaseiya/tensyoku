@@ -31,6 +31,13 @@
                        value="{{ $folder_id = $folder->id }}"
                        type="hidden"> 
 
+                <input
+                       id="name"
+                       name="name"
+                       class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}"
+                       value="{{ Auth::guard('admin')->user()->company_name }}"
+                       type="hidden">
+
                 <fieldset class="mb-4">
                     <div class="form-group">
                         <label for="company_name">

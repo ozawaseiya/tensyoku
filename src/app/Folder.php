@@ -16,6 +16,7 @@ class Folder extends Model
         'folder_id',
         'company_apply_id',
         'sender_name',
+        'company_name',
         'user_id'
       ];
 }

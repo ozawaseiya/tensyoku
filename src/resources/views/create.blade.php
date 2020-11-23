@@ -37,6 +37,13 @@
                        value="{{ $folder+1 }}"
                        type="hidden"> 
 
+                <input
+                        id="name"
+                        name="name"
+                        class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}"
+                        value="<?php print Auth::user()->name; ?>"
+                        type="hidden">
+
 
                 <input id="user_id" name="user_id"
                        value="<?php print Auth::user()->id; ?>"
@@ -50,7 +57,7 @@
                         <input
                             id="sender_name"
                             name="sender_name"
-                            class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}"
+                            class="form-control {{ $errors->has('sender_name') ? 'is-invalid' : '' }}"
                             value="<?php print Auth::user()->name; ?>"
                             type="text"
                         >

@@ -110,8 +110,6 @@ class AdminController extends Controller
 
       Auth::guard('admin')->logout(); // ログアウト
       Admin::where('id', $id)->delete();
-      //$table = Admin::findOrFail($id);
-      //$table->delete(); // 管理者が削除される。
   
       return view('admin.admindestroy');
   }

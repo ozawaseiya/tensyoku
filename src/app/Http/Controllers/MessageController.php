@@ -149,11 +149,14 @@ class MessageController extends Controller
     public function apply($folder_id)
     {
     
-    
-    $folder = Folder::where('id', $folder_id)->firstOrFail();
+    $folder = Folder::where('id', $folder_id)->first();
+
+    $id = $folder->company_apply_id;
+
+    $detail = Company::find($id);
 
     $messages = Message::where('folder_id', $folder_id)->get();
 
-    return view('apply.message', ['messages' => $messages, 'folder' => $folder]);
+    return view('apply.message', ['messages' => $messages, 'folder' => $folder, 'detail' => $detail]);
     }
 }

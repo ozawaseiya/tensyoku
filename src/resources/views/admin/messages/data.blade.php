@@ -60,7 +60,7 @@
       </div>
     </div>
     <br><br>
-    <p style="color:red">＊基本的にこの応募を削除することは望ましくありません:ユーザー側に一時的に影響が出る恐れがあるため深夜の時間帯での削除を推奨します</p>
+    <p style="color:red">＊基本的にこの応募を削除することは望ましくありません</p>
     <a class="btn btn-danger" href="{{ route('messages.datadestroy', $folder_id = $message->folder_id) }}">この応募を削除する</a> 
   </div>
 </main>

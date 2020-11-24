@@ -34,7 +34,7 @@ class UsersTableSeeder extends Seeder
                'remember_token' => Str::random(10),
                'year' => 1,
                'position' => 'フロントエンドエンジニア',
-               'skill' => 'PHP',
+               'skill' => 'Javascript',
                'folder_id' => NULL
               ]
              ];

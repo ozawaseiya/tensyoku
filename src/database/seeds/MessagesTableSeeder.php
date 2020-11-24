@@ -20,7 +20,7 @@ class MessagesTableSeeder extends Seeder
               ['id' => 1,
                'folder_id' => 1,
                'name' => '田中太郎',
-               'interview_message' => '御社の面接に行きたいです'
+               'interview_message' => '御社の面接に行きたいです!'
               ],
               ['id' => 2,
                'folder_id' => 2,

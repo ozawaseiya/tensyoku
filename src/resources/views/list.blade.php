@@ -54,7 +54,7 @@
      </tr>
       @foreach($companies as $company)
       <tr>
-        <td>{{ $loop->iteration }}</td>
+        <td>{{ ($companies ->currentpage()-1) * $companies ->perpage() + $loop->index + 1 }}</td>
         <td>
         <a href="{{ action('CompanyController@detail', $company_apply_id = $company->id) }}">この求人を見る</a>
         </td>

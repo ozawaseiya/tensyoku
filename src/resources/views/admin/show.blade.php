@@ -19,7 +19,7 @@
          </ul>
         </div>
         <div class="col offset-3" id="main">
-        <h3>募集職種の内容</h3>
+        <h3 style="color:#2a2a64;">募集職種の内容</h3>
         <br>
         　　　<table class="table text-center">
     　<tr>
@@ -49,16 +49,17 @@
         この求人を編集する
     </a>
     <br><br>
-    <a href="{{ route('messages.index', $company_apply_id = $company->id) }}">応募者からのメッセージを確認する</a>
+    <a style="color:green;" href="{{ route('messages.index', $company_apply_id = $company->id) }}">応募者からのメッセージを確認する</a>
     <br><br>
 
     <a href="{{ route('admin.read') }}">現在募集している職種のページに戻る</a>
     <br><br>
     @if ($company->company_job_stop === NULL)
-    <a href="{{ route('admin.stop', $company_apply_id = $company->id) }}">この募集を停止する</a>
+    <a style="color:red;" href="{{ route('admin.stop', $company_apply_id = $company->id) }}">この募集を停止する</a>
     @else
     <p>既に募集停止中です！！！</p>
     @endif
+    <br><br>
     <br><br>
     @if ( $folder == NULL )
     <p style="color:red">＊現在応募者がいないため、いつでも削除可能です</p>

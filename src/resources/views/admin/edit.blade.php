@@ -19,7 +19,7 @@
          </ul>
         </div>
         <div class="col offset-3" id="main">
-        <h3>募集職種の内容</h3>
+        <h3 style="text-align:center; color:#2a2a64;">募集職種の内容</h3>
         <br>
 
         　　　<form method="POST" action="{{ route('admin.update', $company_apply_id = $company->id)  }}">

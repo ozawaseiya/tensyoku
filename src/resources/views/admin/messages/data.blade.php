@@ -18,7 +18,7 @@
     <div class="row">
       <div class="col col-md-8">
         <nav class="panel panel-default">
-          <div class="panel-heading">
+          <div style="text-align:center; color:#2a2a64;" class="panel-heading">
           {{ $user->name }}さんからの応募メッセージとプロフィール
           </div>
           <div class="panel-body">
@@ -28,7 +28,11 @@
                <p>{{ $message->name }} : {{ $message->interview_message }}（{{ $message->created_at }}）</p>
           @endforeach
                <br><br>
-    <table class="table text-center">
+               </div>
+        </nav>
+      </div>
+    
+    <table style="width:600px;" class="table text-center">
     　<tr>
       <th>ユーザー名</th>
       <th>メールアドレス</th>
@@ -44,23 +48,21 @@
         <td>{{ $user->skill }}</td>
       </tr>
     </table>
-          </div>
-        </nav>
-      </div>
+          
       <div class="column col-md-8">
-      <a href="{{ route('admin.messages.reply', $id = $message->folder_id) }}">このメッセージに対して返信する</a>
+      <a style="color:green;" href="{{ route('admin.messages.reply', $id = $message->folder_id) }}">このメッセージに対して返信する</a>
       <br><br>
       </div>
       <div class="column col-md-8">
       <a href="{{ url()->previous() }}">前のページに戻る</a>
+      <br><br>
       </div>
       <div class="column col-md-8">
-      <br><br>
       <a href="{{ route('admin.read') }}">管理画面に戻る</a>
       </div>
     </div>
     <br><br>
-    <p style="color:red">＊基本的にこの応募を削除することは望ましくありません</p>
+    <p style="color:red">＊基本的に応募を削除することは望ましくありません</p>
     <a class="btn btn-danger" href="{{ route('messages.datadestroy', $folder_id = $message->folder_id) }}">この応募を削除する</a> 
   </div>
 </main>

@@ -18,7 +18,7 @@
     <div class="row">
       <div class="col col-md-5">
         <nav class="panel panel-default">
-          <div class="panel-heading">応募者からのメッセージ用のフォルダ</div>
+          <div style="text-align:center; color:#2a2a64;" class="panel-heading">応募者からのメッセージ用のフォルダ</div>
           <div class="panel-body">
           </div>
           <div class="list-group">

@@ -32,7 +32,7 @@
         </nav>
       </div>
     </div>
-    <a href="{{ route('recreate', $id = $folder->id) }}">企業にメッセージを送信する</a>
+    <a style="color:green;" href="{{ route('recreate', $id = $folder->id) }}">企業にメッセージを送信する</a>
     <br><br>
     <a href="{{ url()->previous() }}">前のページに戻る</a>
   </div>

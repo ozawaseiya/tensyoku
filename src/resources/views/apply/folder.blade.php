@@ -18,7 +18,7 @@
     <div class="row">
       <div class="col col-md-5">
         <nav class="panel panel-default">
-          <div class="panel-heading">企業からのメッセージ用のフォルダ(空欄の場合は連絡がありません)</div>
+          <div style="text-align:center; color:#2a2a64;" class="panel-heading">企業からのメッセージ用のフォルダ(空欄の場合は連絡がありません)</div>
           <div class="panel-body">
           </div>
           <div class="list-group">
@@ -27,7 +27,7 @@
           <br>
           @else
           <a href="{{ route('apply.message', $folder_id = $folder->id)}}" class="list-group-item">
-          {{ $folder->company_name }}からメッセージがきています
+          {{ $loop->iteration }}{{ $folder->company_name }}からメッセージがきています
           </a>
           @endif
           @endforeach

@@ -19,7 +19,7 @@
          </ul>
         </div>
         <div class="col offset-3" id="main">
-        <h3>募集職種の作成</h3>
+        <h3 style="text-align:center; color:#2a2a64;">募集職種の作成</h3>
         <br>
 
 

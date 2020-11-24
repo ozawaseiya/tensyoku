@@ -18,12 +18,12 @@
     <div class="row">
       <div class="col col-md-8">
         <nav class="panel panel-default">
-          <div class="panel-heading">
+          <div style="text-align:center; color:#2a2a64;" class="panel-heading">
           応募者への返信メッセージ
           </div>
           <div class="panel-body">
           </div>
-          <div class="list-group">
+          <div class="list-group" style="padding: 5px 10px 10px 10px;">
                　　　　<form method="POST" action="{{ route('admin.messages.replystore', $folder_id = $folder->id) }}">
                 @csrf
                 

@@ -14,7 +14,7 @@
         <ul class="nav  nav-stacked　d-flex flex-column py-md-4">
             <li class="active py-md-3"><a href="{{ route('info') }}">この転職サイトについて</a></li>
             @if( Auth::check() )
-            <li class="py-md-4"><a href="{{ route('profile') }}">個人プロフィールを見る</a></li>
+            <li class="py-md-4"><a style="color:green;" href="{{ route('profile') }}">個人プロフィールを見る</a></li>
             <li class="py-md-4"><a href="{{ route('apply.folder') }}">企業からのメッセージを確認する</a></li>
 　　　　　　　@endif
          </ul>

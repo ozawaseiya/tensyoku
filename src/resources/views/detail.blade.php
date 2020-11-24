@@ -14,41 +14,39 @@
         <ul class="nav  nav-stacked　d-flex flex-column py-md-4">
             <li class="active py-md-3"><a href="{{ route('info') }}">この転職サイトについて</a></li>
             @if( Auth::check() )
-            <li class="py-md-4"><a href="{{ route('profile') }}">個人プロフィールを見る</a></li>
+            <li class="py-md-4"><a style="color:green;" href="{{ route('profile') }}">個人プロフィールを見る</a></li>
 　　　　　　　@endif
          </ul>
         </div>
         <div class="col offset-3" id="main">
-        <table class="table text-center">
-    　<tr>
-      <th>会社名</th>
-      <th>サービス内容</th>
-      <th>募集職種</th>
-      <th>スキル</th>
-      <th>年収</th>
-     </tr>
-      <tr>
-        <td>{{ $detail->company_name }}</td>
-        <td>{{ $detail->company_service }}</td>
-        <td>{{ $detail->company_apply_job }}</td>
-        <td>{{ $detail->company_job_skill }}</td>
-        <td>{{ $detail->company_job_salary }}</td>
-      </tr>
-    </table>
+
+        <p style="text-align:center; color:#2a2a64; font-weight:bold;">会社名：{{ $detail->company_name }}</p>
+        <br>
+        <div style="width:600px; background-color:#D5E0F2; padding: 20px 20px 20px 20px;" class="container">
+        <p>サービス内容：{{ $detail->company_service }}</p>
+        <p>募集職種：{{ $detail->company_apply_job }}</p>
+        <p>職種内容：{{ $detail->company_job_content }}</p>
+        <p>スキル：{{ $detail->company_job_skill }}</p>
+        <p>経験年数{{ $detail->company_job_year }}</p>
+        <p>社員数：{{ $detail->company_member_number }}</p>
+        <p>年収：{{ $detail->company_job_salary }}</p>
+
+    <br><br>
     @if (Auth::guard('user')->check())
     @if ( $apply == Auth::user()->name )
     <p>この求人に既に応募済みです</p>
     @else
     @if ($detail->company_job_stop === NULL)
-    <a href="{{ route('create', $id = $detail->id )}}">この求人に応募する</a>
+    <a style="color:green;" href="{{ route('create', $id = $detail->id )}}">この求人に応募する</a>
     @else 
     <p>この求人は募集停止中です！</p>
     @endif
     @endif
     @endif
     <br><br>
-    <a href="{{ route('list') }}">一覧に戻る</a>
+    <a style="color:green;" href="{{ route('list') }}">一覧に戻る</a>
         </div>
+    </div>
     </div>
 </div>
 @endsection

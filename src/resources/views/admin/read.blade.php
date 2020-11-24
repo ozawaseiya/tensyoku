@@ -13,7 +13,7 @@
         <div class="col-3 px-1 position-fixed" id="sticky-sidebar">
         <ul class="nav  nav-stacked　d-flex flex-column py-md-4">
             @if((Auth::guard('admin')->check()))
-            <li class="py-md-4"><a href="{{ route('admin.read') }}">募集要項を確認する</a></li>
+            <li class="py-md-4"><a style="color:green;" href="{{ route('admin.read') }}">募集要項を確認する</a></li>
             <li class="py-md-4"><a href="{{ route('admin.create')}}">募集職種を作成する</a></li>
 　　　　　　　@endif
          </ul>
@@ -54,7 +54,6 @@
     <div class="d-flex justify-content-center mb-5">
     {{ $applies->links() }}
     </div>  
-    <br><br>
     <a href="{{ route('admin') }}">トップページに戻る</a>
         </div>
     </div>

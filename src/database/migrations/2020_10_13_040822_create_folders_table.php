@@ -20,7 +20,6 @@ class CreateFoldersTable extends Migration
             $table->string('company_name')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->timestamps();
-
         });
 
         Schema::table('folders', function($table) {

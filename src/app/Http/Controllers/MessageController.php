@@ -153,9 +153,9 @@ class MessageController extends Controller
 
     $id = $folder->company_apply_id;
 
-    $detail = Company::find($id);
-
     $messages = Message::where('folder_id', $folder_id)->get();
+
+    $detail = Company::find($id);
 
     return view('apply.message', ['messages' => $messages, 'folder' => $folder, 'detail' => $detail]);
     }

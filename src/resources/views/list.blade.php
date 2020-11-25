@@ -39,7 +39,7 @@
  
     <p><input type="submit" value="検索"></p>
 </form>
-
+<br>
         </div>
         <div class="col offset-3" id="main">    
         <table class="table text-center">

@@ -23,7 +23,7 @@
           </div>
           <div class="panel-body">
           </div>
-          <div class="list-group">
+          <div style="padding-left:10px;" class="list-group">
           @foreach($messages as $message)
                <p>{{ $message->name }} : {{ $message->interview_message }}（{{ $message->created_at }}）</p>
           @endforeach
@@ -58,7 +58,7 @@
       <br><br>
       </div>
       <div class="column col-md-8">
-      <a href="{{ route('admin.read') }}">管理画面に戻る</a>
+      <a href="{{ route('admin.read') }}">募集一覧ページに戻る</a>
       </div>
     </div>
     <br><br>

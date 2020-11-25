@@ -27,7 +27,7 @@
           <br>
           @else
           <a href="{{ route('apply.message', $folder_id = $folder->id)}}" class="list-group-item">
-          募集{{ $loop->iteration }}：{{ $folder->company_name }}からメッセージがきています
+          募集{{ $folder->company_apply_id }}：{{ $folder->company_name }}からメッセージがきています
           </a>
           @endif
           @endforeach

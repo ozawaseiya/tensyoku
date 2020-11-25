@@ -35,6 +35,7 @@
     @if (Auth::guard('user')->check())
     @if ( $apply == Auth::user()->name )
     <p>この求人に既に応募済みです</p>
+    <a href="{{ route('apply.folder') }}">企業からのメッセージを確認する</a>
     @else
     @if ($detail->company_job_stop === NULL)
     <a style="color:green;" href="{{ route('create', $id = $detail->id )}}">この求人に応募する</a>

@@ -8,11 +8,6 @@
                 <div class="card-header">募集停止完了画面</div>
 
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
 
                     募集停止が完了しました!
                     <br><br>

@@ -23,7 +23,7 @@ class Company extends Model
         'company_apply_job',
         'company_job_content',
         'company_job_skill',
-        'company_job_year',
+        'company_job_month',
         'company_member_number',
         'company_job_salary',
         'company_job_stop'

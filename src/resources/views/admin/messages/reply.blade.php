@@ -23,7 +23,7 @@
           </div>
           <div class="panel-body">
           </div>
-          <div class="list-group" style="padding: 5px 10px 10px 10px;">
+          <div class="list-group" style="padding: 5px 10px 20px 10px;">
                　　　　<form method="POST" action="{{ route('admin.messages.replystore', $folder_id = $folder->id) }}">
                 @csrf
                 

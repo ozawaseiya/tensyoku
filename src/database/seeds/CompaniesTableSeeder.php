@@ -26,9 +26,9 @@ class CompaniesTableSeeder extends Seeder
                'company_apply_job' => 'バックエンドエンジニア',
                'company_job_content' => '新規サービスの開発',
                'company_job_skill' => 'Ruby',
-               'company_job_year' => 2,
+               'company_job_month' => 6,
                'company_member_number' => 50,
-               'company_job_salary' => 450,
+               'company_job_salary' => 350,
               ],
               [
                 'id' => 2,
@@ -38,9 +38,9 @@ class CompaniesTableSeeder extends Seeder
                 'company_apply_job' => 'バックエンドエンジニア',
                 'company_job_content' => '既存サービスの保守改修',
                 'company_job_skill' => 'PHP',
-                'company_job_year' => 1,
+                'company_job_month' => 0,
                 'company_member_number' => 50,
-                'company_job_salary' => 500,
+                'company_job_salary' => 280,
               ],
               [
                 'id' => 3,
@@ -50,9 +50,9 @@ class CompaniesTableSeeder extends Seeder
                 'company_apply_job' => 'バックエンドエンジニア',
                 'company_job_content' => '既存サービスの保守改修',
                 'company_job_skill' => 'JAVA',
-                'company_job_year' => 1,
+                'company_job_month' => 8,
                 'company_member_number' => 50,
-                'company_job_salary' => 400,
+                'company_job_salary' => 380,
               ],
               [
                 'id' => 4,
@@ -62,9 +62,9 @@ class CompaniesTableSeeder extends Seeder
                 'company_apply_job' => 'バックエンドエンドエンジニア',
                 'company_job_content' => '既存サービスの保守改修',
                 'company_job_skill' => 'Ruby',
-                'company_job_year' => 3,
+                'company_job_month' => 7,
                 'company_member_number' => 300,
-                'company_job_salary' => 500,
+                'company_job_salary' => 340,
               ],
               [
                 'id' => 5,
@@ -74,9 +74,9 @@ class CompaniesTableSeeder extends Seeder
                 'company_apply_job' => 'フロントエンドエンドエンジニア',
                 'company_job_content' => '既存サービスの保守改修',
                 'company_job_skill' => 'Javascript',
-                'company_job_year' => 4,
+                'company_job_month' => 0,
                 'company_member_number' => 300,
-                'company_job_salary' => 600,
+                'company_job_salary' => 300,
               ],
               [
                 'id' => 6,
@@ -86,9 +86,9 @@ class CompaniesTableSeeder extends Seeder
                 'company_apply_job' => 'バックエンドエンジニア',
                 'company_job_content' => '新規海外オフショアプロジェクトの立ち上げ',
                 'company_job_skill' => 'PHP',
-                'company_job_year' => 2,
+                'company_job_month' => 0,
                 'company_member_number' => 100,
-                'company_job_salary' => 400,
+                'company_job_salary' => 240,
                 ]
              ];
     // 登録

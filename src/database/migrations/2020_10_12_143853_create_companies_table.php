@@ -22,7 +22,7 @@ class CreateCompaniesTable extends Migration
             $table->string('company_apply_job');
             $table->string('company_job_content');
             $table->string('company_job_skill');
-            $table->integer('company_job_year');
+            $table->integer('company_job_month');
             $table->integer('company_member_number');
             $table->integer('company_job_salary');
             $table->integer('company_job_stop')->nullable();

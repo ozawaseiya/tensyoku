@@ -14,7 +14,7 @@
         <ul class="nav  nav-stacked　d-flex flex-column py-md-4">
             @if((Auth::guard('admin')->check()))
             <li class="py-md-4"><a href="{{ route('admin.read') }}">募集要項を確認する</a></li>
-            <li class="py-md-4"><a href="{{ route('admin.create')}}">募集職種を作成する</a></li>
+            <li class="py-md-4"><a style="color:green;" href="{{ route('admin.create')}}">募集職種を作成する</a></li>
 　　　　　　　@endif
          </ul>
         </div>
@@ -28,7 +28,7 @@
       <th>募集職種</th>
       <th>職種内容</th>
       <th>スキル</th>
-      <th>経験年数</th>
+      <th>経験月数（個人開発経験含む）</th>
       <th>社員数</th>
       <th>年収</th>
      </tr>
@@ -38,14 +38,14 @@
         <td>{{ $company->company_apply_job }}</td>
         <td>{{ $company->company_job_content }}</td>
         <td>{{ $company->company_job_skill }}</td>
-        <td>{{ $company->company_job_year }}</td>
-        <td>{{ $company->company_member_number }}</td>
-        <td>{{ $company->company_job_salary }}</td>
+        <td>{{ $company->company_job_month }}ヶ月</td>
+        <td>{{ $company->company_member_number }}人</td>
+        <td>{{ $company->company_job_salary }}万円</td>
       </tr>
     </table>
         
     <br>
-    <a href="{{ route('admin.edit', $company_apply_id = $company->id) }}">
+    <a style="color:#FF8C00;" href="{{ route('admin.edit', $company_apply_id = $company->id) }}">
         この求人を編集する
     </a>
     <br><br>
@@ -54,14 +54,15 @@
 
     <a href="{{ route('admin.read') }}">現在募集している職種のページに戻る</a>
     <br><br>
-    @if ($company->company_job_stop === NULL)
+    <br><br>
+    @if (empty($company->company_job_stop))
     <a style="color:red;" href="{{ route('admin.stop', $company_apply_id = $company->id) }}">この募集を停止する</a>
     @else
     <p>既に募集停止中です！！！</p>
     @endif
     <br><br>
     <br><br>
-    @if ( $folder == NULL )
+    @if (empty($folder))
     <p style="color:red">＊現在応募者がいないため、いつでも削除可能です</p>
     <form style="display: inline-block;" method="POST" action="{{ route('admin.destroy', $company_apply_id = $company->id)}}">
     @csrf

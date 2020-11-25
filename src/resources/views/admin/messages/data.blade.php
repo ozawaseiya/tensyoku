@@ -32,11 +32,11 @@
         </nav>
       </div>
     
-    <table style="width:600px;" class="table text-center">
+    <table style="width:780px;" class="table text-center">
     　<tr>
       <th>ユーザー名</th>
       <th>メールアドレス</th>
-      <th>経験年数</th>
+      <th>経験月数</th>
       <th>職種</th>
       <th>スキル</th>
      </tr>
@@ -50,17 +50,24 @@
     </table>
           
       <div class="column col-md-8">
-      <a style="color:green;" href="{{ route('admin.messages.reply', $id = $message->folder_id) }}">このメッセージに対して返信する</a>
+      <a href="{{ route('admin.messages.reply', $id = $message->folder_id) }}">このメッセージに対して返信する</a>
       <br><br>
       </div>
       <div class="column col-md-8">
-      <a href="{{ url()->previous() }}">前のページに戻る</a>
+      <a style="color:green;" href="{{ url()->previous() }}">前のページに戻る</a>
       <br><br>
       </div>
       <div class="column col-md-8">
-      <a href="{{ route('admin.read') }}">募集一覧ページに戻る</a>
+      <a style="color:#FF8C00;" href="{{ route('admin.read') }}">募集一覧ページに戻る</a>
       </div>
     </div>
+    <br><br>
+    @if (isset($folder->hire))
+    <p style="color:red; font-weight:bold;">＊「{{ $user->name }}」さんは既に採用されました！おめでとうございます！
+    <br>運営会社への連絡をお願いします。その際に翌月の社員リストのご提示をお願いします。</p>
+    @else
+    <a class="btn btn-primary" href="{{ route('messages.hire', $id = $message->folder_id) }}">この応募者を採用する</a> 
+    @endif
     <br><br>
     <p style="color:red">＊基本的に応募を削除することは望ましくありません</p>
     <a class="btn btn-danger" href="{{ route('messages.datadestroy', $folder_id = $message->folder_id) }}">この応募を削除する</a> 

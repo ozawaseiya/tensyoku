@@ -31,7 +31,7 @@
       <th>スキル</th>
       <th>年収</th>
       <th>仕事内容</th>
-      <th>経験年数</th>
+      <th>経験月数（個人開発経験含む）</th>
       <th>社員数</th>
      </tr>
       @foreach($applies as $apply)
@@ -44,10 +44,10 @@
         <td>{{ $apply->company_service }}</td>
         <td>{{ $apply->company_apply_job }}</td>
         <td>{{ $apply->company_job_skill }}</td>
-        <td>{{ $apply->company_job_salary }}</td>
+        <td>{{ $apply->company_job_salary }}万円</td>
         <td>{{ $apply->company_job_content }}</td>
-        <td>{{ $apply->company_job_year }}</td>
-        <td>{{ $apply->company_member_number }}</td>
+        <td>{{ $apply->company_job_month }}ヶ月</td>
+        <td>{{ $apply->company_member_number }}人</td>
       </tr>
       @endforeach
     </table>

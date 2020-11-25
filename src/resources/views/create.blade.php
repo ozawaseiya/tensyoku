@@ -70,7 +70,7 @@
 
                     <div class="form-group">
                         <label for="interview_message">
-                            応募メッセージ内容（ユーザーのプロフィール情報は自動送信されます）
+                            熱い応募メッセージ欄（ユーザーのプロフィール情報は自動送信されます）
                         </label>
                         
                         <input

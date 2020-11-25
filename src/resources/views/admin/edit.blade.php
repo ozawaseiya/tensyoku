@@ -14,7 +14,7 @@
         <ul class="nav  nav-stacked　d-flex flex-column py-md-4">
             @if((Auth::guard('admin')->check()))
             <li class="py-md-4"><a href="{{ route('admin.read') }}">募集要項を確認する</a></li>
-            <li class="py-md-4"><a href="{{ route('admin.create')}}">募集職種を作成する</a></li>
+            <li class="py-md-4"><a style="color:green;" href="{{ route('admin.create')}}">募集職種を作成する</a></li>
 　　　　　　　@endif
          </ul>
         </div>
@@ -132,19 +132,19 @@
 
 
                     <div class="form-group">
-                        <label for="company_job_year">
-                            経験年数
+                        <label for="company_job_month">
+                            経験月数（個人開発経験含む）
                         </label>
                         <input
-                            id="company_job_year"
-                            name="company_job_year"
-                            class="form-control {{ $errors->has('company_job_year') ? 'is-invalid' : '' }}"
-                            value="{{ old('company_job_year') ?: $company->company_job_year }}"
+                            id="company_job_month"
+                            name="company_job_month"
+                            class="form-control {{ $errors->has('company_job_month') ? 'is-invalid' : '' }}"
+                            value="{{ old('company_job_month') ?: $company->company_job_month }}"
                             type="number"
                         >
-                        @if ($errors->has('company_job_year'))
+                        @if ($errors->has('company_job_month'))
                             <div class="invalid-feedback">
-                                {{ $errors->first('company_job_year') }}
+                                {{ $errors->first('company_job_month') }}
                             </div>
                         @endif
                     </div>
@@ -203,6 +203,7 @@
 
     <br>
     <a href="{{ route('admin.read') }}">現在募集している職種のページに戻る</a>
+    <br><br>
         </div>
     </div>
 </div>

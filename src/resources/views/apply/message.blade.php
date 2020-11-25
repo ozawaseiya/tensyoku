@@ -33,7 +33,11 @@
       </div>
     </div>
 
-    
+    @if (isset($folder->hire))
+    <p style="color:red; font-weight:bold;">＊あなたは「{{ $folder->company_name }}」社から既に採用されました！おめでとうございます！
+    @else
+    @endif
+　　 <br><br>
     <a style="color:green;" href="{{ route('recreate', $id = $folder->id) }}">企業にメッセージを送信する</a>
     <br><br>
     <a href="{{ url()->previous() }}">前のページに戻る</a>
@@ -46,9 +50,9 @@
         <p>募集職種：{{ $detail->company_apply_job }}</p>
         <p>職種内容：{{ $detail->company_job_content }}</p>
         <p>スキル：{{ $detail->company_job_skill }}</p>
-        <p>経験年数{{ $detail->company_job_year }}</p>
-        <p>社員数：{{ $detail->company_member_number }}</p>
-        <p>年収：{{ $detail->company_job_salary }}</p>
+        <p>経験月数（個人開発経験含む）：{{ $detail->company_job_month }}ヶ月</p>
+        <p>社員数：{{ $detail->company_member_number }}人</p>
+        <p>年収：{{ $detail->company_job_salary }}万円</p>
         </div>
   </div>
 </main>

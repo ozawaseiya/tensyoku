@@ -19,6 +19,7 @@ class CreateFoldersTable extends Migration
             $table->string('sender_name')->nullable();
             $table->string('company_name')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
+            $table->integer('hire')->nullable();
             $table->timestamps();
         });
 

@@ -81,9 +81,10 @@ Route::get('/profile', 'HomeController@profile')->name('profile');
 //ユーザー削除
 Route::get('/profile/destroy', 'HomeController@destroy')->name('destroy');
 
-//ユーザーからのメッセージ確認機能
+//企業側からのメッセージ確認機能
 Route::get('/admin/folders/{id}/messages', 'MessageController@index')->name('messages.index');
 Route::get('/admin/folders/{id}/messages/data', 'MessageController@data')->name('messages.data');
+Route::get('/admin/folders/{id}/messages/hire', 'MessageController@hire')->name('messages.hire');
 
 //企業から応募メッセージ削除
 Route::get('/admin/folders/{id}/messages/data/datadestroy', 'MessageController@datadestroy')->name('messages.datadestroy');

@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-3 px-1 position-fixed" id="sticky-sidebar">
         <ul class="nav  nav-stacked　d-flex flex-column py-md-4">
-            <li class="active py-md-3"><a href="{{ route('info') }}">この転職サイトについて</a></li>
+            <li class="active py-md-3"><a style="color:#FF8C00;" href="{{ route('info') }}">この転職サイトについて</a></li>
             @if( Auth::check() )
             <li class="py-md-4"><a style="color:green;" href="{{ route('profile') }}">個人プロフィールを見る</a></li>
             <li class="py-md-4"><a href="{{ route('apply.folder') }}">企業からのメッセージを確認する</a></li>
@@ -54,7 +54,7 @@
      </tr>
       @foreach($companies as $company)
       <tr>
-        <td>{{ ($companies ->currentpage()-1) * $companies ->perpage() + $loop->index + 1 }}</td>
+        <td>{{ $company->id }}</td>
         <td>
         <a href="{{ action('CompanyController@detail', $company_apply_id = $company->id) }}">この求人を見る</a>
         </td>
@@ -62,7 +62,7 @@
         <td>{{ $company->company_service }}</td>
         <td>{{ $company->company_apply_job }}</td>
         <td>{{ $company->company_job_skill }}</td>
-        <td>{{ $company->company_job_salary }}</td>
+        <td>{{ $company->company_job_salary }}万円</td>
       </tr>
       @endforeach
     </table>

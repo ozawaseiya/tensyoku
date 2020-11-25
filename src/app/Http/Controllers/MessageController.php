@@ -34,7 +34,21 @@ class MessageController extends Controller
 
     $messages = Message::where('folder_id', $id)->get();
 
-    return view('admin.messages.data', ['messages' => $messages, 'user' => $user]);
+    return view('admin.messages.data', ['messages' => $messages, 'user' => $user, 'folder' => $folder]);
+    }
+
+
+    public function hire($id)
+    {
+
+    $hire = Folder::findOrFail($id);
+    $hire->fill(['hire' => 0])->save();
+
+    $number = $hire->company_apply_id;
+
+    $folders = Folder::where('company_apply_id', $number)->get();
+
+    return view('admin.messages.index', ['folders' => $folders]);
     }
 
 

@@ -62,7 +62,7 @@ class AdminController extends Controller
         'company_apply_job' => 'required|max:30',
         'company_job_content' => 'required|max:300',
         'company_job_skill' => 'required|max:30',
-        'company_job_year' => 'required|max:30',
+        'company_job_month' => 'required|max:30',
         'company_member_number' => 'required|max:30',
         'company_job_salary'  => 'required|max:30'
     ]);
@@ -101,7 +101,7 @@ class AdminController extends Controller
       'company_apply_job' => 'required|max:30',
       'company_job_content' => 'required|max:300',
       'company_job_skill' => 'required|max:30',
-      'company_job_year' => 'required|max:30',
+      'company_job_month' => 'required|max:30',
       'company_member_number' => 'required|max:30',
       'company_job_salary'  => 'required|max:30'
     ]);

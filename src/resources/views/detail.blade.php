@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-3 px-1 position-fixed" id="sticky-sidebar">
         <ul class="nav  nav-stacked　d-flex flex-column py-md-4">
-            <li class="active py-md-3"><a href="{{ route('info') }}">この転職サイトについて</a></li>
+            <li class="active py-md-3"><a style="color:#FF8C00;" href="{{ route('info') }}">この転職サイトについて</a></li>
             @if( Auth::check() )
             <li class="py-md-4"><a style="color:green;" href="{{ route('profile') }}">個人プロフィールを見る</a></li>
 　　　　　　　@endif
@@ -27,9 +27,10 @@
         <p>募集職種：{{ $detail->company_apply_job }}</p>
         <p>職種内容：{{ $detail->company_job_content }}</p>
         <p>スキル：{{ $detail->company_job_skill }}</p>
-        <p>経験年数{{ $detail->company_job_year }}</p>
-        <p>社員数：{{ $detail->company_member_number }}</p>
-        <p>年収：{{ $detail->company_job_salary }}</p>
+        <p>経験月数（個人開発経験含む）：{{ $detail->company_job_month }}ヶ月</p>
+        <p>社員数：{{ $detail->company_member_number }}人</p>
+        <p>年収：{{ $detail->company_job_salary }}万円</p>
+        <a style="color:#FF8C00;" href="https://portfolio.awsmikawa.com/portfolio/">この会社の紹介ページを見る</a>
 
     <br><br>
     @if (Auth::guard('user')->check())
@@ -37,7 +38,7 @@
     <p>この求人に既に応募済みです</p>
     <a href="{{ route('apply.folder') }}">企業からのメッセージを確認する</a>
     @else
-    @if ($detail->company_job_stop === NULL)
+    @if (empty($detail->company_job_stop))
     <a style="color:green;" href="{{ route('create', $id = $detail->id )}}">この求人に応募する</a>
     @else 
     <p>この求人は募集停止中です！</p>
@@ -45,7 +46,7 @@
     @endif
     @endif
     <br><br>
-    <a style="color:green;" href="{{ route('list') }}">一覧に戻る</a>
+    <a href="{{ route('list') }}">一覧に戻る</a>
         </div>
     </div>
     </div>

@@ -18,13 +18,13 @@
 　　　　　　　@endif
          </ul>
         </div>
-        <div class="col offset-3" id="main">
+        <div class="col-10 offset-3" id="main">
         <h3>現在管理者が募集している職種</h3>
         <br>
         <table class="table text-center">
     　<tr>
     　<th>募集ID</th>
-      <th>求人へのリンク</th>
+      <th>リンク</th>
       <th>会社名</th>
       <th>サービス内容</th>
       <th>募集職種</th>
@@ -38,7 +38,7 @@
       <tr>
         <td>{{ $apply->id }}</td>
         <td>
-        <a href="{{ route('admin.show', $company_apply_id = $apply->id) }}">この求人を見る</a>
+        <a href="{{ route('admin.show', $company_apply_id = $apply->id) }}">応募者を見る</a>
         </td>
         <td>{{ $apply->company_name }}</td>
         <td>{{ $apply->company_service }}</td>

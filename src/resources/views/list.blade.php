@@ -41,7 +41,7 @@
 </form>
 <br>
         </div>
-        <div class="col offset-3" id="main">    
+        <div class="col-10 offset-3" id="main">    
         <table class="table text-center">
     　<tr>
     　<th>募集</th>

@@ -30,7 +30,7 @@
         <p>経験月数（個人開発経験含む）：{{ $detail->company_job_month }}ヶ月</p>
         <p>社員数：{{ $detail->company_member_number }}人</p>
         <p>年収：{{ $detail->company_job_salary }}万円</p>
-        <a style="color:#FF8C00;" href="https://portfolio.awsmikawa.com/portfolio/">この会社の紹介ページを見る</a>
+        <a style="color:#FF8C00;" href="https://portfolio.awsmikawa.com/portfolio/">この会社の紹介ページを見る（ポートフォーリオサイトへ）</a>
 
     <br><br>
     @if (Auth::guard('user')->check())

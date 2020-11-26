@@ -28,7 +28,7 @@
       <th>募集職種</th>
       <th>職種内容</th>
       <th>スキル</th>
-      <th>経験月数（個人開発経験含む）</th>
+      <th>経験月数（個人開発を含む）</th>
       <th>社員数</th>
       <th>年収</th>
      </tr>
@@ -63,7 +63,7 @@
     <br><br>
     <br><br>
     @if (empty($folder))
-    <p style="color:red">＊現在応募者がいないため、いつでも削除可能です</p>
+    <p style="color:red">＊現在、この求人の応募者がいません</p>
     <form style="display: inline-block;" method="POST" action="{{ route('admin.destroy', $company_apply_id = $company->id)}}">
     @csrf
     @method('DELETE')

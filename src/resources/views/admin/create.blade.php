@@ -171,7 +171,7 @@
                     </div>
 
 　　　　　　　　　　　　<div class="form-group">
-                    <label for="photo">画像ファイル</label><br>
+                    <label for="photo">画像ファイル（最大アップロードサイズは8Mです：容量が大きいほど時間がかかります）</label><br>
                     <input type="file"  name="file_name" required>
                     </div>
 

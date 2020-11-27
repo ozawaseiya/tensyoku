@@ -7,7 +7,7 @@ use App\Models\Admin;
 use App\Company;
 use App\Folder;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Storage;
 
 
 class AdminController extends Controller
@@ -69,9 +69,11 @@ class AdminController extends Controller
         'file_name' => 'required|file|image|mimes:jpeg,png,jpg'
       ]);
 
-      $filename = $request->file('file_name')->store('image');
+      $path = $request->file('file_name')->store('img');
 
-      Company::create($companies);
+
+      $company = Company::create($companies);
+      $company->fill(['file_name' => basename($path)])->save();
 
     return redirect()->route('admin.read');
    }
@@ -120,8 +122,9 @@ class AdminController extends Controller
    public function destroy($company_apply_id)
    {
     $company = Company::findOrFail($company_apply_id);
+    unlink(storage_path('app/public/img/'.$company->file_name));
     $company->delete();
-
+    
     return redirect()->route('admin.read');
    }
 

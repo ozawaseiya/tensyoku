@@ -2,11 +2,6 @@
 
 @section('content')
 <div class="container ops-main">
-<div class="row">
-  <div class="col-xs-14">
-    <h3 class="ops-title">管理者画面</h3>
-  </div>
-</div>
 
 <div class="container-fluid">
     <div class="row">
@@ -22,8 +17,7 @@
         <h3 style="text-align:center; color:#2a2a64;">募集職種の作成</h3>
         <br>
 
-
-        <form method="POST" action="{{ route('admin.store') }}">
+        <form method="POST" action="{{ route('admin.store') }}" enctype="multipart/form-data">
                 @csrf
 
                 <input id="company_id" name="company_id"
@@ -176,6 +170,10 @@
                         @endif
                     </div>
 
+　　　　　　　　　　　　<div class="form-group">
+                    <label for="photo">画像ファイル</label><br>
+                    <input type="file"  name="file_name" required>
+                    </div>
 
                     <div class="mt-5">
                         <a class="btn btn-secondary" href="{{ route('admin') }}">

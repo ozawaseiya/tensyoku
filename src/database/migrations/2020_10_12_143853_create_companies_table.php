@@ -26,6 +26,7 @@ class CreateCompaniesTable extends Migration
             $table->integer('company_member_number');
             $table->integer('company_job_salary');
             $table->integer('company_job_stop')->nullable();
+            $table->string('file_name')->nullable();
             $table->timestamps();
 
         });

@@ -48,6 +48,7 @@ class AdminController extends Controller
 
     public function create()
    {
+    
     return view('admin.create');
    }
 
@@ -64,10 +65,13 @@ class AdminController extends Controller
         'company_job_skill' => 'required|max:30',
         'company_job_month' => 'required|max:30',
         'company_member_number' => 'required|max:30',
-        'company_job_salary'  => 'required|max:30'
-    ]);
+        'company_job_salary'  => 'required|max:30',
+        'file_name' => 'required|file|image|mimes:jpeg,png,jpg'
+      ]);
 
-    Company::create($companies);
+      $filename = $request->file('file_name')->store('image');
+
+      Company::create($companies);
 
     return redirect()->route('admin.read');
    }

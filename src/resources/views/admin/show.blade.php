@@ -2,11 +2,6 @@
 
 @section('content')
 <div class="container ops-main">
-<div class="row">
-  <div class="col-xs-14">
-    <h3 class="ops-title">管理者画面</h3>
-  </div>
-</div>
 
 <div class="container-fluid">
     <div class="row">

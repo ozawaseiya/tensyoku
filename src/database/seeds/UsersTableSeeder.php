@@ -22,7 +22,7 @@ class UsersTableSeeder extends Seeder
                'email' => 'tanaka@gmail.com',
                'password' => bcrypt('12345abc'),
                'remember_token' => Str::random(10),
-               'year' => 1,
+               'month' => 1,
                'position' => 'バックエンドエンジニア',
                'skill' => 'PHP',
                'folder_id' => NULL
@@ -32,7 +32,7 @@ class UsersTableSeeder extends Seeder
                'email' => 'ishikawa@gmail.com',
                'password' => bcrypt('12345abc'),
                'remember_token' => Str::random(10),
-               'year' => 1,
+               'month' => 1,
                'position' => 'フロントエンドエンジニア',
                'skill' => 'Javascript',
                'folder_id' => NULL

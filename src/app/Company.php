@@ -26,7 +26,8 @@ class Company extends Model
         'company_job_month',
         'company_member_number',
         'company_job_salary',
-        'company_job_stop'
+        'company_job_stop',
+        'file_name'
       ];
 
 }

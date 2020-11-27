@@ -149,9 +149,20 @@ return [
         'email' => 'メールアドレス',
         'name'  => 'ユーザーネーム',
         'password'  => 'パスワード',
-        'year'  => '経験月数（個人開発含む）',
+        'month'  => '経験月数（個人開発含む）',
         'position'  => '職種',
         'skill'  => 'スキル',
+        'company_name' => '会社名',
+        'company_service' => 'サービス内容',
+        'company_apply_job' => '募集職種',
+        'company_job_content' => '職種内容',
+        'company_job_skill' => 'スキル',
+        'company_job_month' => '経験月数',
+        'company_member_number' => '社員数',
+        'company_job_salary' => '年収（万円）',
+        'sender_name' => '応募者名',
+        'sender_name' => '会社名',
+        'name' => '送信者名'
     ],
 
 ];

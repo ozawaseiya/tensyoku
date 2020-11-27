@@ -23,6 +23,10 @@
         <p style="text-align:center; color:#2a2a64; font-weight:bold;">会社名：{{ $detail->company_name }}</p>
         <br>
         <div style="width:600px; background-color:#D5E0F2; padding: 20px 20px 20px 20px;" class="container">
+        @if (isset($detail->file_name))
+        <img src="storage/app/public/image/fgqXyVoQ0zAIurKtd7zy7BY7cl5Eznbgy1yZQjdW.jpeg" style="width:200px; height:100px; margin-bottom:20px;">
+        @else
+        @endif
         <p>サービス内容：{{ $detail->company_service }}</p>
         <p>募集職種：{{ $detail->company_apply_job }}</p>
         <p>職種内容：{{ $detail->company_job_content }}</p>
@@ -35,7 +39,7 @@
     <br><br>
     @if (Auth::guard('user')->check())
     @if ( $apply == Auth::user()->name )
-    <p>この求人に既に応募済みです</p>
+    <p>あなたは既に応募済みです</p>
     <a href="{{ route('apply.folder') }}">企業からのメッセージを確認する</a>
     @else
     @if (empty($detail->company_job_stop))

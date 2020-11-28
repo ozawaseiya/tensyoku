@@ -29,6 +29,7 @@ class CompaniesTableSeeder extends Seeder
                'company_job_month' => 6,
                'company_member_number' => 50,
                'company_job_salary' => 350,
+               'file_name' => 'app.jpeg'
               ],
               [
                 'id' => 2,
@@ -41,6 +42,7 @@ class CompaniesTableSeeder extends Seeder
                 'company_job_month' => 0,
                 'company_member_number' => 50,
                 'company_job_salary' => 280,
+                'file_name' => 'computer.jpeg'
               ],
               [
                 'id' => 3,
@@ -53,6 +55,7 @@ class CompaniesTableSeeder extends Seeder
                 'company_job_month' => 8,
                 'company_member_number' => 50,
                 'company_job_salary' => 380,
+                'file_name' => 'office.jpeg'
               ],
               [
                 'id' => 4,
@@ -65,6 +68,7 @@ class CompaniesTableSeeder extends Seeder
                 'company_job_month' => 7,
                 'company_member_number' => 300,
                 'company_job_salary' => 340,
+                'file_name' => 'member.jpeg'
               ],
               [
                 'id' => 5,
@@ -77,6 +81,7 @@ class CompaniesTableSeeder extends Seeder
                 'company_job_month' => 0,
                 'company_member_number' => 300,
                 'company_job_salary' => 300,
+                'file_name' => 'app.jpeg'
               ],
               [
                 'id' => 6,
@@ -89,6 +94,7 @@ class CompaniesTableSeeder extends Seeder
                 'company_job_month' => 0,
                 'company_member_number' => 100,
                 'company_job_salary' => 240,
+                'file_name' => 'global.jpeg'
                 ]
              ];
     // 登録

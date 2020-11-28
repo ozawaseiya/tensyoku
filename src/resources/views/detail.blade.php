@@ -24,7 +24,7 @@
         <br>
         <div style="width:600px; background-color:#D5E0F2; padding: 20px 20px 20px 20px;" class="container">
         @if (isset($detail->file_name))
-        <img src="{{ asset('/storage/img/'.$detail->file_name) }}" style="width:200px; height:100px; margin-bottom:20px; margin: 0 auto;">
+        <img src="{{ asset('/storage/img/'.$detail->file_name) }}" style="width:400px; height:100px; margin-bottom:20px; margin-left:80px;">
         @else
         @endif
         <p>サービス内容：{{ $detail->company_service }}</p>

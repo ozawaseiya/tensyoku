@@ -42,6 +42,7 @@
 <br>
         </div>
         <div class="col-10 offset-3" id="main">    
+        <img src="{{ asset('/storage/img/main.jpg') }}" style="max-width:900px; width:100%; height:120px; margin-bottom:20px;">
         <table class="table text-center">
     　<tr>
     　<th>募集</th>

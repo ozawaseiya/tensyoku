@@ -1,11 +1,12 @@
-#Title: 未経験エンジニア転職サイト
+# Title: 未経験エンジニア転職サイト
 
 未経験エンジニア転職サイト 
 
 サイトのURL：https://tensyoku.awsmikawa.com/ 
+
 ソースコードの保存先 GitHub：https://github.com/ozawaseiya/tensyoku
 
-#tensyoku(name of repository)
+# tensyoku(name of repository)
 
 　未経験や経験の浅いエンジニアが転職成功時にサイト運営社に成功報酬10万円を支払う転職サイト。
 
@@ -13,20 +14,20 @@
 の採用システムでは需要と供給のミスマッチが生じているのだ。
 　この問題を解決するために未経験・経験浅めエンジニアから成功報酬をサイト運営社に支払う方法にすれば、会社は大きな初期費用も必要なく、コスト不要で採用することができる。これにより、現行の採用システムによって生じていた需要と供給のミスマッチを緩和されることになる。結果的に多くの希望を未経験や経験の浅いエンジニアたちに与え、採用する会社側も彼らのポテンシャルを将来的に生かすことができるようになる。
 
-#Dependency
+# Dependency
 
 PHP7.3, HTML5, CSS3, MySQL8, フレームワーク:Laravel6.20.4, Bootstrap4
 
-#Setup
+# Setup
 
 Setup AWS(IAM,VPC,EC2,RDS,ELB,EIP,Route53,Amazon Certificate Manager), Github, Visual Stadio Code, Docker(Docker-compose)
 
-#Usage
+# Usage
 
 Webシステム機能一覧 
 
 1.ユーザー/管理者登録・削除機能, 2.ユーザー/管理者ログイン・ログアウト機能, 3.求人検索機能（キーワード検索,年収検索,スキル検索）, 4.求人への応募機能, 5.ユーザー・管理者間メッセージ機能 6.求人作成・編集・削除機能, 7.求人募集停止機能, 8.採用通知機能
 
-#License Copyright(c) 2020 Seiya Ozawa This software is released under the MIT License, see LICENSE. https://opensource.org/licenses/mit-license.php
+# License Copyright(c) 2020 Seiya Ozawa This software is released under the MIT License, see LICENSE. https://opensource.org/licenses/mit-license.php
 
-#Authors and References
+# Authors and References

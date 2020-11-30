@@ -13,6 +13,8 @@ class HomeController extends Controller
         $this->middleware('auth:admin');
     }
 
+    //企業側の管理者画面ログイン画面
+
     public function index()
     {
         return view('admin.home');

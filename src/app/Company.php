@@ -28,6 +28,6 @@ class Company extends Model
         'company_job_salary',
         'company_job_stop',
         'file_name'
-      ];
+    ];
 
 }

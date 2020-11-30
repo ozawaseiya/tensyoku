@@ -13,6 +13,8 @@ class HomeController extends Controller
         $this->middleware('auth:user');
     }
 
+    //ユーザー側のログイン画面表示
+
     public function index()
     {
         return view('user.home');

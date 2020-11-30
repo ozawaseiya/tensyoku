@@ -11,52 +11,53 @@ use App\Folder;
 class CompanyController extends Controller
 {
 
+  //求人情報一覧ページと絞り込み
+
   public function list(Request $request)
-    {
-        $keyword = $request->input('keyword');
-        $company_job_salary = $request->input('company_job_salary');
-        $company_job_skill = $request->input('company_job_skill');
+  {
+      $keyword = $request->input('keyword');
+      $company_job_salary = $request->input('company_job_salary');
+      $company_job_skill = $request->input('company_job_skill');
  
-        $query = Company::query();
+      $query = Company::query();
 
-        // DBよりCompanyテーブルの値を全て取得
-        $company = Company::paginate(5);
-        // Companyテーブルに存在する企業数を取得
-        $companyNumbers = Company::all()->count();
+      // DBよりCompanyテーブルの値を全て取得
+      $company = Company::paginate(5);
+      // Companyテーブルに存在する企業数を取得
+      $companyNumbers = Company::all()->count();
 
-
-    if (!empty($keyword)) {
+      if (!empty($keyword)) {
       $query->where(function($query) use ($keyword) {
           $query->where('company_name', 'LIKE', "%{$keyword}%")
                 ->orWhere('company_service', 'LIKE', "%{$keyword}%")
                 ->orWhere('company_job_skill', 'LIKE', "%{$keyword}%")
                 ->orWhere('company_apply_job', 'LIKE', "%{$keyword}%");
-     });
-    }
+      });
+      }
 
-    if (!empty($company_job_salary)) {
+      if (!empty($company_job_salary)) {
       $query->where('company_job_salary', '>=', $company_job_salary);
-    }
+      }
 
 
-    if (!empty($company_job_skill)) {
-    $query->WhereIn('company_job_skill', $company_job_skill);
-    }
+      if (!empty($company_job_skill)) {
+      $query->WhereIn('company_job_skill', $company_job_skill);
+      }
 
-        $companies = $query->paginate(5);
+      $companies = $query->paginate(5);
+
+      return view('list', compact('companies', 'companyNumbers',  'keyword', 'company_job_salary', 'company_job_skill'));
+  }
 
 
-        return view('list', compact('companies', 'companyNumbers',  'keyword', 'company_job_salary', 'company_job_skill'));
-    }
-
-
+  //求人情報詳細ページ
 
   public function detail($company_apply_id)
   {
 
-    $detail = Company::find($company_apply_id);
+      $detail = Company::find($company_apply_id);
 
-    if (Auth::guard('user')->check()) {
+      if (Auth::guard('user')->check()) {
 
       $name = Auth::user()->name;
 
@@ -68,17 +69,19 @@ class CompanyController extends Controller
         $apply = Auth::user()->name;
       } 
 
-    } else {
-        $apply = NULL;
-    }
+      } else {
+      $apply = NULL;
+      }
 
-    return view('detail', ['detail' => $detail, 'apply' => $apply]);
+      return view('detail', ['detail' => $detail, 'apply' => $apply]);
   }
 
 
+  //転職サイト情報表示
+
   public function info()
   {
-     return view('info');
+      return view('info');
   }
 
 }

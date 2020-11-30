@@ -19,5 +19,5 @@ class Folder extends Model
         'company_name',
         'user_id',
         'hire'
-      ];
+    ];
 }

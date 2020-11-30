@@ -12,51 +12,60 @@ use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
+    
+    //企業側の管理画面表示    
+
     public function admin()
     {
-       // DBよりAdminテーブルの値を全て取得
-       $admin = Admin::all();
+        // DBよりAdminテーブルの値を全て取得
+        $admin = Admin::all();
 
-       return view('admin.admin', compact('admin'));
+        return view('admin.admin', compact('admin'));
     }
 
 
+    //企業側の求人一覧情報表示
+
     public function read()
     {
-      $recruit = Auth::guard('admin')->user()->id;
+        $recruit = Auth::guard('admin')->user()->id;
 
-      $applies = Company::where('company_id',$recruit)->paginate(5);
+        $applies = Company::where('company_id',$recruit)->paginate(5);
       
-       return view('admin.read', ['applies' => $applies]);
+        return view('admin.read', ['applies' => $applies]);
     }
 
     //求人募集停止
 
     public function stop($company_apply_id)
     {
-    $company = Company::where('id', $company_apply_id)->first();
+        $company = Company::where('id', $company_apply_id)->first();
 
-    $params = ([
-      'company_job_stop' => '募集停止'
-    ]);
+        $params = ([
+        'company_job_stop' => '募集停止'
+        ]);
 
-    $company->fill($params)->save();
+        $company->fill($params)->save();
       
-     return view('admin.stop');
+        return view('admin.stop');
     }
 
 
+    //企業側の求人作成
+
     public function create()
-   {
+    {
     
-    return view('admin.create');
-   }
+        return view('admin.create');
+    }
 
 
-   public function store(Request $request)
-   {
+    //企業側の求人作成保存
 
-    $companies = $request->validate([
+    public function store(Request $request)
+    {
+
+       $companies = $request->validate([
         'company_id' => 'required|max:30',
         'company_name' => 'required|max:30',
         'company_service' => 'required|max:400',
@@ -67,77 +76,93 @@ class AdminController extends Controller
         'company_member_number' => 'required|max:30',
         'company_job_salary'  => 'required|max:30',
         'file_name' => 'required|file|image|mimes:jpeg,png,jpg'
-      ]);
+       ]);
 
-      $path = $request->file('file_name')->store('img');
+       $path = $request->file('file_name')->store('img');
 
+       $company = Company::create($companies);
+      
+       $company->fill(['file_name' => basename($path)])->save();
 
-      $company = Company::create($companies);
-      $company->fill(['file_name' => basename($path)])->save();
-
-    return redirect()->route('admin.read');
+       return redirect()->route('admin.read');
    }
 
+
+   //求人詳細画面表示
 
    public function show($company_apply_id)
    {
 
-    $company = Company::findOrFail($company_apply_id);
+       $company = Company::findOrFail($company_apply_id);
 
-    $folder = Folder::where('company_apply_id', $company_apply_id)->first();
+       $folder = Folder::where('company_apply_id', $company_apply_id)->first();
 
-    return view('admin.show', ['company' => $company, 'folder' => $folder]);
+       return view('admin.show', ['company' => $company, 'folder' => $folder]);
    }
 
-   public function edit($company_apply_id){
 
-    $company = Company::findOrFail($company_apply_id);
+   //各求人内容編集
 
-    return view('admin.edit', ['company' => $company]);
+   public function edit($company_apply_id)
+   {
+
+       $company = Company::findOrFail($company_apply_id);
+
+       return view('admin.edit', ['company' => $company]);
    }
+
+   
+   //各求人内容更新
 
    public function update($company_apply_id, Request $request)
    {
 
-    $params = $request->validate([
-      'company_id' => 'required|max:30',
-      'company_apply_id' => 'required|max:30',
-      'company_name' => 'required|max:30',
-      'company_service' => 'required|max:400',
-      'company_apply_job' => 'required|max:30',
-      'company_job_content' => 'required|max:300',
-      'company_job_skill' => 'required|max:30',
-      'company_job_month' => 'required|max:30',
-      'company_member_number' => 'required|max:30',
-      'company_job_salary'  => 'required|max:30'
-    ]);
+       $params = $request->validate([
+        'company_id' => 'required|max:30',
+        'company_apply_id' => 'required|max:30',
+        'company_name' => 'required|max:30',
+        'company_service' => 'required|max:400',
+        'company_apply_job' => 'required|max:30',
+        'company_job_content' => 'required|max:300',
+        'company_job_skill' => 'required|max:30',
+        'company_job_month' => 'required|max:30',
+        'company_member_number' => 'required|max:30',
+        'company_job_salary'  => 'required|max:30'
+       ]);
 
-    $company = Company::findOrFail($company_apply_id);
-    $company->fill($params)->save();
+       $company = Company::findOrFail($company_apply_id);
+
+       $company->fill($params)->save();
     
-    return redirect()->route('admin.show', ['company' => $company, $company->id]);
+       return redirect()->route('admin.show', ['company' => $company, $company->id]);
    }
 
+   //各求人を削除
 
    public function destroy($company_apply_id)
    {
-    $company = Company::findOrFail($company_apply_id);
-    unlink(storage_path('app/public/img/'.$company->file_name));
-    $company->delete();
+
+       $company = Company::findOrFail($company_apply_id);
+
+       unlink(storage_path('app/public/img/'.$company->file_name));
+
+       $company->delete();
     
-    return redirect()->route('admin.read');
+       return redirect()->route('admin.read');
    }
 
 
-   public function admindestroy() {
+   //企業側の管理者アカウント削除
 
-      $id = Auth::guard('admin')->user()->id;
+   public function admindestroy()
+   {
+　　   $id = Auth::guard('admin')->user()->id;
 
-      Auth::guard('admin')->logout(); // ログアウト
-      Admin::where('id', $id)->delete();
+       Auth::guard('admin')->logout(); // ログアウト
+      
+       Admin::where('id', $id)->delete();
   
-      return view('admin.admindestroy');
-  }
-
-  
+       return view('admin.admindestroy');
+  　}
+ 
 }

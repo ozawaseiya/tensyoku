@@ -15,5 +15,5 @@ class Message extends Model
         'folder_id',
         'name',
         'interview_message'
-      ];
+    ];
 }

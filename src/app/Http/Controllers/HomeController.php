@@ -23,12 +23,18 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
 
+
+    //ユーザー側からのプロフィール情報表示
+
     public function profile()
     {
         return view('profile');
     }
 
-    public function destroy () {
+    //ユーザー側からのアカウント削除
+
+    public function destroy ()
+    {
         $user = Auth::user();
     
         Auth::logout(); // ログアウト

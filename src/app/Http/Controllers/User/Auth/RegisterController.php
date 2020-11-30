@@ -62,7 +62,7 @@ class RegisterController extends Controller
      * @return \App\User
      */
 
-    //登録処理
+    //ユーザー登録処理
 
     protected function create(array $data)
     {

@@ -35,18 +35,17 @@ class AdminController extends Controller
         return view('admin.read', ['applies' => $applies]);
     }
 
+
     //求人募集停止
 
     public function stop($company_apply_id)
     {
         $company = Company::where('id', $company_apply_id)->first();
-
-        $params = ([
-        'company_job_stop' => '募集停止'
-        ]);
-
+        
+        $params = (['company_job_stop' => 0]);
+        
         $company->fill($params)->save();
-      
+        
         return view('admin.stop');
     }
 
@@ -156,13 +155,13 @@ class AdminController extends Controller
 
    public function admindestroy()
    {
-　　   $id = Auth::guard('admin')->user()->id;
+       $id = Auth::guard('admin')->user()->id;
 
        Auth::guard('admin')->logout(); // ログアウト
       
        Admin::where('id', $id)->delete();
   
        return view('admin.admindestroy');
-  　}
+    }
  
 }

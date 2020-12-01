@@ -24,7 +24,7 @@
         <table class="table text-center" style="padding: 20px 20px 20px 20px;">
     　<tr><th>ユーザー名</th><td>{{ Auth::user()->name }}</td></tr>
       <tr><th>メールアドレス</th><td>{{ Auth::user()->email }}</td></tr>
-      <tr><th>経験月数（個人開発含む）</th><td>{{ Auth::user()->year }}ヶ月</td></tr>
+      <tr><th>経験月数（個人開発含む）</th><td>{{ Auth::user()->month }}ヶ月</td></tr>
       <tr><th>職種</th><td>{{ Auth::user()->position }}</td></tr>
       <tr><th>スキル</th><td>{{ Auth::user()->skill }}</td></tr>
     </table>

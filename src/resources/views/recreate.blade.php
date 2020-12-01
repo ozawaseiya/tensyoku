@@ -3,7 +3,7 @@
 @section('content')
 <div class="container ops-main">
 <div class="row">
-  <div class="col-xs-14">
+  <div class="col-12">
     <h3 class="ops-title">求人企業詳細</h3>
   </div>
 </div>
@@ -19,8 +19,8 @@
 　　　　　　　@endif
          </ul>
         </div>
-        <div class="col offset-3" id="main">
-        <div class="col offset-3" id="main">
+        <div class="col-9 offset-3" id="main">
+        <div class="col-9 offset-3" id="main">
         <h3>応募用メッセージの作成</h3>
         <br>
 

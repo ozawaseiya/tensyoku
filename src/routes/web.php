@@ -40,8 +40,6 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
 
 });
 
-//管理者削除
-Route::get('/admin/admindestroy', 'AdminController@admindestroy')->name('admin.admindestroy');
 
 //管理者用求人閲覧ページ
 Route::get('/admin/read', 'AdminController@read')->name('admin.read');
@@ -54,6 +52,9 @@ Route::resource('/admin', 'AdminController', ['only' => ['create', 'store', 'sho
 
 //管理者用トップページ
 Route::get('/admin', 'AdminController@admin')->name('admin');
+
+//管理者削除
+Route::get('/admin/admindestroy', 'AdminController@admindestroy')->name('admin.admindestroy');
 
 
 //ユーザー応募ページ作成

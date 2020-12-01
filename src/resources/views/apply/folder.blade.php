@@ -23,7 +23,7 @@
           </div>
           <div class="list-group">
           @foreach($folders as $folder)
-          @if (empty($folder->company_name))
+          @if (!isset($folder->company_name))
           <br>
           @else
           <a href="{{ route('apply.message', $folder_id = $folder->id)}}" class="list-group-item">

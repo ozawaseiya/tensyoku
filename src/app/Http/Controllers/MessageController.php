@@ -36,9 +36,9 @@ class MessageController extends Controller
         $user = User::find($user);
 
         $id = $folder->id;
-
+        
         $messages = Message::where('folder_id', $id)->get();
-
+        
         return view('admin.messages.data', ['messages' => $messages, 'user' => $user, 'folder' => $folder]);
     }
 

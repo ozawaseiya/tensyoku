@@ -3,7 +3,7 @@
 @section('content')
 <div class="container ops-main">
 <div class="row">
-  <div class="col-xs-14">
+  <div class="col-12">
     <h3 class="ops-title">求人企業詳細</h3>
   </div>
 </div>
@@ -14,13 +14,13 @@
         <ul class="nav  nav-stacked　d-flex flex-column py-md-4">
             <li class="active py-md-3"><a href="{{ route('info') }}">この転職サイトについて</a></li>
             @if( Auth::check() )
-            <li class="py-md-4"><a href="{{ route('profile') }}">個人プロフィールを見る</a></li>
-            <li class="py-md-4"><a href="#">メッセージを確認する</a></li>
+            <li class="py-md-4"><a style="color:green;" href="{{ route('profile') }}">個人プロフィールを見る</a></li>
+            <li class="py-md-4"><a style="color:#FF8C00;" href="{{ route('apply.folder') }}">企業からのメッセージを確認する</a></li>
 　　　　　　　@endif
          </ul>
         </div>
-        <div class="col offset-3" id="main">
-        <div class="col offset-3" id="main">
+        <div class="col-9 offset-3" id="main">
+        <div class="col-9 offset-3" id="main">
         <h3>応募用メッセージの作成</h3>
         <br>
 
@@ -70,7 +70,7 @@
 
                     <div class="form-group">
                         <label for="interview_message">
-                            熱い応募メッセージ欄（ユーザーのプロフィール情報は自動送信されます）
+                            応募メッセージ欄（ユーザーのプロフィール情報は自動送信されます）
                         </label>
                         
                         <input

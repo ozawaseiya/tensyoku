@@ -126,6 +126,7 @@
                             class="form-control {{ $errors->has('company_job_month') ? 'is-invalid' : '' }}"
                             value="{{ old('company_job_month') }}"
                             type="number"
+                            min="0"
                         >
                         @if ($errors->has('company_job_month'))
                             <div class="invalid-feedback">
@@ -144,6 +145,7 @@
                             class="form-control {{ $errors->has('company_member_number') ? 'is-invalid' : '' }}"
                             value="{{ old('company_member_number') }}"
                             type="number"
+                            min="0"
                         >
                         @if ($errors->has('company_member_number'))
                             <div class="invalid-feedback">
@@ -162,6 +164,7 @@
                             class="form-control {{ $errors->has('company_job_salary') ? 'is-invalid' : '' }}"
                             value="{{ old('company_job_salary') }}"
                             type="number"
+                            min="0"
                         >
                         @if ($errors->has('company_job_salary'))
                             <div class="invalid-feedback">

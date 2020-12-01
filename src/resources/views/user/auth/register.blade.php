@@ -63,12 +63,12 @@
 
 
                         <div class="form-group row">
-                            <label for="year" class="col-md-4 col-form-label text-md-right">{{ __('year') }}</label>
+                            <label for="month" class="col-md-4 col-form-label text-md-right">{{ __('month') }}</label>
 
                             <div class="col-md-6">
-                                <input id="year" type="number" class="form-control @error('year') is-invalid @enderror" name="year" value="{{ old('year') }}" required autocomplete="year" autofocus>
+                                <input id="month" type="number" min="0" class="form-control @error('month') is-invalid @enderror" name="month" value="{{ old('month') }}" required autocomplete="month" autofocus>
 
-                                @error('year')
+                                @error('month')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

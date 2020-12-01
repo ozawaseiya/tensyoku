@@ -44,7 +44,7 @@
     <br><br><br><br>
     <p style="color:#2a2a64; font-weight:bold;">この求人の詳細</p>
         <br>
-        <div style="background-color:#D5E0F2; padding: 20px 20px 20px 20px;" class="col col-md-8">
+        <div style="background-color:#D5E0F2; padding: 20px 20px 20px 20px; margin-bottom:30px;" class="col col-md-8">
         <p>会社名：{{ $detail->company_name }}</p>
         <p>サービス内容：{{ $detail->company_service }}</p>
         <p>募集職種：{{ $detail->company_apply_job }}</p>

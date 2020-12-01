@@ -16,6 +16,7 @@
             @if( Auth::check() )
             <li class="py-md-4"><a style="color:green;" href="{{ route('profile') }}">個人プロフィールを見る</a></li>
 　　　　　　　@endif
+            <li class="py-md-4"><a href="{{ route('list') }}">一覧に戻る</a></li>
          </ul>
         </div>
         <div class="col offset-3" id="main">
@@ -24,7 +25,7 @@
         <br>
         <div style="width:600px; background-color:#D5E0F2; padding: 20px 20px 20px 20px;" class="container">
         @if (isset($detail->file_name))
-        <img src="{{ asset('/storage/img/'.$detail->file_name) }}" style="width:360px; height:130px; margin-bottom:20px; margin-left:100px;">
+        <img src="{{ asset('/storage/img/'.$detail->file_name) }}" style="width:360px; height:140px; margin-bottom:20px; margin-left:100px;">
         @else
         @endif
         <p>サービス内容：{{ $detail->company_service }}</p>
@@ -34,7 +35,7 @@
         <p>経験月数（個人開発経験含む）：{{ $detail->company_job_month }}ヶ月</p>
         <p>社員数：{{ $detail->company_member_number }}人</p>
         <p>年収：{{ $detail->company_job_salary }}万円</p>
-        <a style="color:#FF8C00;" href="https://portfolio.awsmikawa.com/portfolio/" target="_blank" rel="noopener noreferrer">この会社の紹介ページを見る（ポートフォーリオサイトへ）</a>
+        <a style="color:#FF8C00;" href="https://portfolio.awsmikawa.com/portfolio/" target="_blank" rel="noopener noreferrer">この会社の紹介ページを見る（OZAWA SEIYAポートフォーリオサイトへ）</a>
 
     <br><br>
     @if (Auth::guard('user')->check())
@@ -42,10 +43,10 @@
     <p>あなたは既に応募済みです</p>
     <a href="{{ route('apply.folder') }}">企業からのメッセージを確認する</a>
     @else
-    @if (empty($detail->company_job_stop))
-    <a style="color:green;" href="{{ route('create', $id = $detail->id )}}">この求人に応募する</a>
-    @else 
+    @if (isset($detail->company_job_stop))
     <p>この求人は募集停止中です！</p>
+    @else 
+    <a style="color:green;" href="{{ route('create', $id = $detail->id )}}">この求人に応募する</a>
     @endif
     @endif
     @endif

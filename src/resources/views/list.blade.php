@@ -12,34 +12,28 @@
     <div class="row">
         <div class="col-3 px-1 position-fixed" id="sticky-sidebar">
         <ul class="nav  nav-stacked　d-flex flex-column py-md-4">
-            <li class="active py-md-3"><a style="color:#FF8C00;" href="{{ route('info') }}">この転職サイトについて</a></li>
+            <li class="py-md-3"><a style="color:#FF8C00;" href="{{ route('info') }}">この転職サイトについて</a></li>
             @if( Auth::check() )
-            <li class="py-md-4"><a style="color:green;" href="{{ route('profile') }}">個人プロフィールを見る</a></li>
-            <li class="py-md-4"><a href="{{ route('apply.folder') }}">企業からのメッセージを確認する</a></li>
+            <li class="py-md-3"><a style="color:green;" href="{{ route('profile') }}">個人プロフィールを見る</a></li>
+            <li class="py-md-3"><a href="{{ route('apply.folder') }}">企業からのメッセージを確認する</a></li>
 　　　　　　　@endif
          </ul>
-
-<h3>検索</h3>
- 
+<h6 style="color:#2a2a64; font-weight:bold;">検索一覧</h6>
 <form action="{{url('/')}}" method="GET">
     <p>
-    気になるワードのみの検索<br>
-    <input type="text" name="keyword" value="{{$keyword}}">
-    </p>
-    <p>
-    希望年収<br>
+    気になるワード検索<br>
+    <input type="text" name="keyword" value="{{$keyword}}"></p>
+    <p>希望年収<br>
     <input type="number" name="company_job_salary" value="{{$company_job_salary}}">万円以上</p>
 
 　　 <p>スキル</p>
-
     <p><input type="checkbox" name="company_job_skill[]" value="PHP" {{ is_array($company_job_skill)&& in_array('PHP', $company_job_skill, true)? 'checked' : '' }}><label>PHP</label></p>
     <p><input type="checkbox" name="company_job_skill[]" value="JAVA" {{ is_array($company_job_skill)&& in_array('JAVA', $company_job_skill, true)? 'checked' : '' }}><label>JAVA</label></p>
     <p><input type="checkbox" name="company_job_skill[]" value="Ruby" {{ is_array($company_job_skill)&& in_array('Ruby', $company_job_skill, true)? 'checked' : '' }}><label>Ruby</label></p>
     <p><input type="checkbox" name="company_job_skill[]" value="Javascript" {{ is_array($company_job_skill)&& in_array('Javascript', $company_job_skill, true)? 'checked' : '' }}><label>Javascript</label></p>
- 
     <p><input type="submit" value="検索"></p>
+   
 </form>
-<br>
         </div>
         <div class="col-10 offset-3" id="main">    
         <img src="{{ asset('/storage/img/main.jpg') }}" style="max-width:900px; width:100%; height:120px; margin-bottom:20px;">

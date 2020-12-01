@@ -136,6 +136,7 @@
                             class="form-control {{ $errors->has('company_job_month') ? 'is-invalid' : '' }}"
                             value="{{ old('company_job_month') ?: $company->company_job_month }}"
                             type="number"
+                            min="0"
                         >
                         @if ($errors->has('company_job_month'))
                             <div class="invalid-feedback">
@@ -155,6 +156,7 @@
                             class="form-control {{ $errors->has('company_member_number') ? 'is-invalid' : '' }}"
                             value="{{ old('company_member_number') ?: $company->company_member_number }}"
                             type="number"
+                            min="0"
                         >
                         @if ($errors->has('company_member_number'))
                             <div class="invalid-feedback">
@@ -166,7 +168,7 @@
 
                     <div class="form-group">
                         <label for="company_job_salary">
-                            社員数
+                        年収（万円）
                         </label>
                         <input
                             id="company_job_salary"
@@ -174,6 +176,7 @@
                             class="form-control {{ $errors->has('company_job_salary') ? 'is-invalid' : '' }}"
                             value="{{ old('company_job_salary') ?: $company->company_job_salary }}"
                             type="number"
+                            min="0"
                         >
                         @if ($errors->has('company_job_salary'))
                             <div class="invalid-feedback">

@@ -50,14 +50,13 @@
     <a href="{{ route('admin.read') }}">現在募集している職種のページに戻る</a>
     <br><br>
     <br><br>
-    @if (empty($company->company_job_stop))
-    <a style="color:red;" href="{{ route('admin.stop', $company_apply_id = $company->id) }}">この募集を停止する</a>
-    @else
+    @if (isset($company->company_job_stop))
     <p>既に募集停止中です！！！</p>
+    @else
+    <a style="color:red;" href="{{ route('admin.stop', $company_apply_id = $company->id) }}">この募集を停止する</a>
     @endif
     <br><br>
-    <br><br>
-    @if (empty($folder))
+    @if (!isset($folder))
     <p style="color:red">＊現在、この求人の応募者がいません</p>
     <form style="display: inline-block;" method="POST" action="{{ route('admin.destroy', $company_apply_id = $company->id)}}">
     @csrf

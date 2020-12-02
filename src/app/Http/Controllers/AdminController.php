@@ -159,6 +159,12 @@ class AdminController extends Controller
 
         $id = $admin->id;
 
+        $companies = Company::where('company_id', $id)->get();
+
+        foreach($companies as $company) {
+        unlink(storage_path('app/public/img/'.$company->file_name));
+        }
+
         $account = Admin::where('id', $id);
         
         $account->delete();

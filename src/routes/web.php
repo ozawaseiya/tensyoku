@@ -41,7 +41,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
 });
 
 //管理者削除
-Route::get('/admin/admindelete', 'AdminController@admindelete')->name('admin.admindelete');
+Route::get('/admin/admindelete', 'AdminController@admindelete');
 
 //管理者用求人閲覧ページ
 Route::get('/admin/read', 'AdminController@read')->name('admin.read');

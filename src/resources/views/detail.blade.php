@@ -44,7 +44,7 @@
     <a href="{{ route('apply.folder') }}">企業からのメッセージを確認する</a>
     @else
     @if (isset($detail->company_job_stop))
-    <p>この求人は募集停止中です！</p>
+    <p style="color:red;">この求人は募集停止中です！</p>
     @else 
     <a style="color:green;" href="{{ route('create', $id = $detail->id )}}">この求人に応募する</a>
     @endif

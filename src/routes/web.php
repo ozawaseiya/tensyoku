@@ -27,7 +27,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
     Auth::routes([
         'register' => true,
         'reset'    => false,
-        'verify'   => false
+        'verify'   => false,
     ]);
 
     // ログイン認証後
@@ -40,12 +40,11 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
 
 });
 
+//管理者削除
+Route::get('/admin/admindelete', 'AdminController@admindelete')->name('admin.admindelete');
 
 //管理者用求人閲覧ページ
 Route::get('/admin/read', 'AdminController@read')->name('admin.read');
-
-//管理者用募集停止ページ
-Route::get('/admin/{company_apply_id}/stop', 'AdminController@stop')->name('admin.stop');
 
 //管理者用求人管理ページ
 Route::resource('/admin', 'AdminController', ['only' => ['create', 'store', 'show', 'edit', 'update', 'destroy']]);
@@ -53,9 +52,8 @@ Route::resource('/admin', 'AdminController', ['only' => ['create', 'store', 'sho
 //管理者用トップページ
 Route::get('/admin', 'AdminController@admin')->name('admin');
 
-//管理者削除
-Route::get('/admin/admindestroy', 'AdminController@admindestroy')->name('admin.admindestroy');
-
+//管理者用募集停止ページ
+Route::get('/admin/{company_apply_id}/stop', 'AdminController@stop')->name('admin.stop');
 
 //ユーザー応募ページ作成
 Route::get('/{company_apply_id}/create', 'MessageController@create')->name('create');

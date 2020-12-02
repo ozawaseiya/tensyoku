@@ -151,17 +151,19 @@ class AdminController extends Controller
    }
 
 
-   //企業側の管理者アカウント削除
+    //企業側の管理者アカウント削除
 
-   public function admindestroy()
-   {
-       $id = Auth::guard('admin')->user()->id;
+    public function admindelete()
+    {
+        $admin = Auth::guard('admin')->user();
 
-       Auth::guard('admin')->logout(); // ログアウト
-      
-       Admin::where('id', $id)->delete();
-  
-       return view('admin.admindestroy');
+        $id = $admin->id;
+
+        $account = Admin::where('id', $id);
+        
+        $account->delete();
+
+        return redirect('/');
     }
  
 }

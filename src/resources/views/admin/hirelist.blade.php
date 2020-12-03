@@ -18,16 +18,16 @@
         <br>
         <table class="table text-center">
     　<tr>
-    　<th>求人募集番号</th>
+    　<th>募集ID</th>
       <th>ユーザーID</th>
     　<th>採用者名</th>
      </tr>
       @foreach($folders as $folder)
-      @if (isset($folder->hire))
+      @if ( $folder->hire === 0 )
       <tr>
         <td>{{ $folder->company_apply_id }}</td>
         <td>{{ $folder->user_id }}</td>
-        <td>{{ $folder->sender_name }}</td>
+        <td>{{ $folder->sender_name }}</td}>
       </tr>
       @endif
       @endforeach

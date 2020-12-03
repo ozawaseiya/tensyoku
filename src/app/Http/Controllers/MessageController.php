@@ -49,7 +49,7 @@ class MessageController extends Controller
     public function hire($id)
     {
 
-        $hire = Folder::findOrFail($id);
+        $hire = Folder::find($id);
 
         $hire->fill(['hire' => 0])->save();
 
@@ -96,7 +96,15 @@ class MessageController extends Controller
     public function create($id)
     {  
 
-        $folder = Folder::all()->count('id');
+        $folder_id = Folder::all()->count();
+
+        if ($folder_id > 0) {
+            // レコードは存在する
+            $folder = Folder::all()->pluck('id')->last();
+        } else {
+            // レコードは存在しない
+            $folder = 0;
+        }
 
         return view('create', ['id' => $id, 'folder' => $folder]);
     }
@@ -113,7 +121,7 @@ class MessageController extends Controller
             'user_id' => 'required|max:30'
         ]);
     
-        Folder::create($folders);
+        $newfolders = Folder::create($folders);
  
         $messages = $request->validate([
          'folder_id' => 'required|max:30',
@@ -121,7 +129,11 @@ class MessageController extends Controller
          'name' => 'required|max:30'
         ]);
  
-        Message::create($messages);
+        $message = Message::create($messages);
+
+        $folder_id = $newfolders->id;
+
+        $message->fill(['folder_id' => $folder_id])->save();
  
         return redirect()->route('list');
     }

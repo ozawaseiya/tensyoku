@@ -41,12 +41,12 @@ class AdminController extends Controller
     {
         $id = Auth::guard('admin')->user()->id;
 
-        $company = Company::where('company_id', $id)->first();
+        $companies = Company::where('company_id', $id)->get();
 
-        $id = $company->id;
+        $id = $companies->pluck('id');
 
-        $folders = Folder::where('company_apply_id', $id)->get();
-      
+        $folders = Folder::whereIn('company_apply_id', $id)->get();
+
         return view('admin.hirelist', ['folders' => $folders]);
     }
 
@@ -158,7 +158,7 @@ class AdminController extends Controller
 
        $company = Company::findOrFail($company_apply_id);
 
-       unlink(storage_path('app/public/img/'.$company->file_name));
+       //unlink(storage_path('app/public/img/'.$company->file_name));
 
        $company->delete();
     
@@ -176,9 +176,9 @@ class AdminController extends Controller
 
         $companies = Company::where('company_id', $id)->get();
 
-        foreach($companies as $company) {
-        unlink(storage_path('app/public/img/'.$company->file_name));
-        }
+        // foreach($companies as $company) {
+        // unlink(storage_path('app/public/img/'.$company->file_name));
+        // }
 
         $account = Admin::where('id', $id);
         

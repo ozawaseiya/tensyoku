@@ -158,7 +158,7 @@ class AdminController extends Controller
 
        $company = Company::findOrFail($company_apply_id);
 
-       //unlink(storage_path('app/public/img/'.$company->file_name));
+       unlink(storage_path('app/public/img/'.$company->file_name));
 
        $company->delete();
     
@@ -176,9 +176,9 @@ class AdminController extends Controller
 
         $companies = Company::where('company_id', $id)->get();
 
-        // foreach($companies as $company) {
-        // unlink(storage_path('app/public/img/'.$company->file_name));
-        // }
+        foreach($companies as $company) {
+        unlink(storage_path('app/public/img/'.$company->file_name));
+        }
 
         $account = Admin::where('id', $id);
         

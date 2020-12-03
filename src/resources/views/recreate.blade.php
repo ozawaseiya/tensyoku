@@ -21,7 +21,7 @@
         </div>
         <div class="col-9 offset-3" id="main">
         <div class="col-9 offset-3" id="main">
-        <h3>応募用メッセージの作成</h3>
+        <h3>返信用メッセージの作成</h3>
         <br>
 
         <form method="POST" action="{{ route('restore', $id) }}">

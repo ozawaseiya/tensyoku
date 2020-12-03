@@ -34,7 +34,7 @@
     </div>
 
     @if (isset($folder->hire))
-    <p style="color:red; font-weight:bold;">＊あなたは「{{ $folder->company_name }}」社から既に採用されました！おめでとうございます！
+    <p style="color:red; font-weight:bold;">＊あなたは「{{ $folder->company_name }}」社から既に採用されました！おめでとうございます！採用後もアカウントはそのままにしておいてください。
     @else
     @endif
 　　 <br><br>

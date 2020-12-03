@@ -10,6 +10,7 @@
             @if((Auth::guard('admin')->check()))
             <li class="py-md-4"><a style="color:green;" href="{{ route('admin.read') }}">募集要項を確認する</a></li>
             <li class="py-md-4"><a href="{{ route('admin.create')}}">募集職種を作成する</a></li>
+            <li class="py-md-4"><a style="color:#FF8C00;" href="{{ route('admin') }}">トップページへ戻る</a></li>
 　　　　　　　@endif
          </ul>
         </div>

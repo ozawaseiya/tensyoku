@@ -43,7 +43,7 @@
       <tr>
         <td>{{ $user->name }}</td>
         <td>{{ $user->email }}</td>
-        <td>{{ $user->year }}</td>
+        <td>{{ $user->month }}</td>
         <td>{{ $user->position }}</td>
         <td>{{ $user->skill }}</td>
       </tr>
@@ -69,8 +69,6 @@
     <a class="btn btn-primary" href="{{ route('messages.hire', $id = $message->folder_id) }}">この応募者を採用する</a> 
     @endif
     <br><br>
-    <p style="color:red">＊基本的に応募を削除することは望ましくありません</p>
-    <a class="btn btn-danger" href="{{ route('messages.datadestroy', $folder_id = $message->folder_id) }}">この応募を削除する</a> 
   </div>
 </main>
 </body>

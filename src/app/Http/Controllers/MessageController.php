@@ -26,10 +26,10 @@ class MessageController extends Controller
 
     //企業側からのメッセージフォルダのメッセージ確認
 
-    public function data($company_apply_id)
+    public function data($id)
     {
 
-        $folder = Folder::find($company_apply_id);
+        $folder = Folder::find($id);
  
         $user = $folder->user_id;
     
@@ -38,6 +38,7 @@ class MessageController extends Controller
         $id = $folder->id;
         
         $messages = Message::where('folder_id', $id)->get();
+
         
         return view('admin.messages.data', ['messages' => $messages, 'user' => $user, 'folder' => $folder]);
     }
@@ -57,22 +58,9 @@ class MessageController extends Controller
         $folders = Folder::where('company_apply_id', $number)->get();
 
         return view('admin.messages.index', ['folders' => $folders]);
-    }
+    }  
 
-
-    //企業側からの応募メッセージフォルダ削除
-
-    public function datadestroy($folder_id)
-    {
-
-        $folder = Folder::where('id', $folder_id)->first();
     
-        $folder->delete(); 
-    
-        return redirect()->route("admin");
-    }
-    
-
     //企業側からのメッセージ返信作成
 
     public function reply($id)

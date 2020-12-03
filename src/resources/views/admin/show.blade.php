@@ -47,8 +47,6 @@
     <a style="color:green;" href="{{ route('messages.index', $company_apply_id = $company->id) }}">応募者からのメッセージを確認する</a>
     <br><br>
 
-    <a href="{{ route('admin.read') }}">現在募集している職種のページに戻る</a>
-    <br><br>
     <br><br>
     @if (isset($company->company_job_stop))
     <p>既に募集停止中です！！！</p>

@@ -35,6 +35,21 @@ class AdminController extends Controller
         return view('admin.read', ['applies' => $applies]);
     }
 
+    //企業側採用者一覧
+
+    public function hirelist()
+    {
+        $id = Auth::guard('admin')->user()->id;
+
+        $company = Company::where('company_id', $id)->first();
+
+        $id = $company->id;
+
+        $folders = Folder::where('company_apply_id', $id)->get();
+      
+        return view('admin.hirelist', ['folders' => $folders]);
+    }
+
 
     //求人募集停止
 

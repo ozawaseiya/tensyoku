@@ -23,7 +23,7 @@
           </div>
           <div class="list-group">
             @foreach($folders as $folder)
-            <a href="{{ route('messages.data', $current_folder_id = $folder->id) }}" class="list-group-item">
+            <a href="{{ route('messages.data', $id = $folder->id) }}" class="list-group-item">
             募集{{ $folder->company_apply_id }}：{{ $folder->sender_name }}
               </a>
             @endforeach

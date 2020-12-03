@@ -161,8 +161,9 @@ return [
         'company_member_number' => '社員数',
         'company_job_salary' => '年収（万円）',
         'sender_name' => '応募者名',
-        'sender_name' => '会社名',
-        'name' => '送信者名'
+        'company_name' => '会社名',
+        'name' => '送信者名',
+        'interview_message' => 'メッセージ'
     ],
 
 ];

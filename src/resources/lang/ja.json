@@ -30,5 +30,6 @@
 "month": "経験月数（個人開発を含む）",
 "position": "職種",
 "skill": "スキル",
-"company_name": "会社名（管理者）"
+"company_name": "会社名（管理者）",
+"interview message": "メッセージ"
 }

@@ -10,6 +10,7 @@
             @if((Auth::guard('admin')->check()))
             <li class="py-md-4"><a style="color:green;" href="{{ route('admin.read')}}">募集要項を確認する</a></li>
             <li class="py-md-4"><a href="{{ route('admin.create')}}">募集職種を作成する</a></li>
+            <li class="py-md-4"><a style="color:#2a2a64;" href="{{ route('admin.hirelist')}}">採用者一覧を見る</a></li>
             <li class="py-md-4"><a style="color:red;" href="{{ action('AdminController@admindelete') }}">管理者を退会する</a></li>
 　　　　　　　@endif
          </ul>

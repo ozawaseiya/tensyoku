@@ -46,6 +46,9 @@ Route::get('/admin/admindelete', 'AdminController@admindelete');
 //管理者用求人閲覧ページ
 Route::get('/admin/read', 'AdminController@read')->name('admin.read');
 
+//管理者用採用者閲覧ページ
+Route::get('/admin/hirelist', 'AdminController@hirelist')->name('admin.hirelist');
+
 //管理者用求人管理ページ
 Route::resource('/admin', 'AdminController', ['only' => ['create', 'store', 'show', 'edit', 'update', 'destroy']]);
 
@@ -84,9 +87,6 @@ Route::get('/profile/destroy', 'HomeController@destroy')->name('destroy');
 Route::get('/admin/folders/{id}/messages', 'MessageController@index')->name('messages.index');
 Route::get('/admin/folders/{id}/messages/data', 'MessageController@data')->name('messages.data');
 Route::get('/admin/folders/{id}/messages/hire', 'MessageController@hire')->name('messages.hire');
-
-//企業から応募メッセージ削除
-Route::get('/admin/folders/{id}/messages/data/datadestroy', 'MessageController@datadestroy')->name('messages.datadestroy');
 
 //企業からメッセージ返信機能(フォルダー内にメッセージ追加)
 Route::get('/admin/folders/{id}/messages/reply', 'MessageController@reply')->name('admin.messages.reply');

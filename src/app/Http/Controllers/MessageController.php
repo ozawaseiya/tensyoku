@@ -95,17 +95,14 @@ class MessageController extends Controller
 
     public function create($id)
     {  
+        
+        $user_id = Auth::user()->id;
 
-        $folder_id = Folder::all()->count();
+        $sender_name = Auth::user()->name;
 
-        if ($folder_id > 0) {
-            // レコードは存在する
-            $folder = Folder::max('id')+1;
+        $folder = Folder::create(['company_apply_id' => $id, 'sender_name' => $sender_name, 'user_id' => $user_id]);
 
-        } else {
-            // レコードは存在しない
-            $folder = 1;
-        }
+        $folder = $folder->id;
 
         return view('create', ['id' => $id, 'folder' => $folder]);
     }
@@ -115,14 +112,6 @@ class MessageController extends Controller
 
     public function store(Request $request)
     {
-
-        $folders = $request->validate([
-            'company_apply_id' => 'required|max:30',
-            'sender_name' => 'required|max:30',
-            'user_id' => 'required|max:30'
-        ]);
-    
-        $newfolders = Folder::create($folders);
  
         $messages = $request->validate([
          'folder_id' => 'required|max:30',
@@ -131,10 +120,6 @@ class MessageController extends Controller
         ]);
  
         $message = Message::create($messages);
-
-        //$folder_id = $newfolders->id;
-
-        //$message->fill(['folder_id' => $folder_id])->save();
  
         return redirect()->route('list');
     }

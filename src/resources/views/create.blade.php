@@ -28,9 +28,9 @@
         <form method="POST" action="{{ route('store', $id) }}">
                 @csrf
 
-                <input id="company_apply_id" name="company_apply_id"
+                <!-- <input id="company_apply_id" name="company_apply_id"
                        value="{{ $id }}"
-                       type="hidden"> 
+                       type="hidden">  -->
 
 
                 <input id="folder_id" name="folder_id"
@@ -45,9 +45,9 @@
                         type="hidden">
 
 
-                <input id="user_id" name="user_id"
+                <!-- <input id="user_id" name="user_id"
                        value="<?php print Auth::user()->id; ?>"
-                       type="hidden"> 
+                       type="hidden">  -->
        
                 <fieldset class="mb-4">
                     <div class="form-group">

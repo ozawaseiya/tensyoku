@@ -100,10 +100,11 @@ class MessageController extends Controller
 
         if ($folder_id > 0) {
             // レコードは存在する
-            $folder = Folder::all()->pluck('id')->last();
+            $folder = Folder::max('id')+1;
+
         } else {
             // レコードは存在しない
-            $folder = 0;
+            $folder = 1;
         }
 
         return view('create', ['id' => $id, 'folder' => $folder]);
@@ -131,9 +132,9 @@ class MessageController extends Controller
  
         $message = Message::create($messages);
 
-        $folder_id = $newfolders->id;
+        //$folder_id = $newfolders->id;
 
-        $message->fill(['folder_id' => $folder_id])->save();
+        //$message->fill(['folder_id' => $folder_id])->save();
  
         return redirect()->route('list');
     }

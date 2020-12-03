@@ -34,7 +34,7 @@
 
 
                 <input id="folder_id" name="folder_id"
-                       value="{{ $folder+1 }}"
+                       value="{{ $folder }}"
                        type="hidden"> 
 
                 <input

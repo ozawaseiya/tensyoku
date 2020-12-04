@@ -16,7 +16,7 @@
 
 # Dependency
 
-PHP7.3, HTML5, CSS3, MySQL8, フレームワーク:Laravel6.20.4, Bootstrap4
+**PHP7.3, HTML5, CSS3, MySQL8, フレームワーク:Laravel6.20.4, Bootstrap4**
 
 # Setup
 
@@ -30,14 +30,14 @@ PHP7.3, HTML5, CSS3, MySQL8, フレームワーク:Laravel6.20.4, Bootstrap4
 
 使用した技術：
 
-AWS(IAM,VPC,EC2,RDS,ELB,EIP,Route53,Amazon Certificate Manager), Github, Visual Stadio Code, Docker(Docker-compose)
+**AWS(IAM,VPC,EC2,RDS,ELB,EIP,Route53,Amazon Certificate Manager), Github, Visual Stadio Code, Docker(Docker-compose)**
 
 # Usage
 
 
 サイトの使い方（求人への応募と採用と募集停止までの一連の流れ）  
 
-
+***
 1.ユーザー側から見たサイトのファーストビュー  
   ![1全体](https://user-images.githubusercontent.com/32008816/101148289-cb452a00-3660-11eb-9f0e-7e549075ff0b.png)  
 ***

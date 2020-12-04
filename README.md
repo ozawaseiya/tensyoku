@@ -6,7 +6,7 @@
 
 このサイトの特徴：
 
-未経験や経験の浅いエンジニア専用の転職サイトで、通常の転職サイトを利用するよりも採用されやすくなる独自の採用方法を用いている。
+*未経験や経験の浅いエンジニア専用の転職サイトで、通常の転職サイトを利用するよりも採用されやすくなる独自の採用方法を用いている*
 
 # tensyoku(name of repository)
 
@@ -21,9 +21,11 @@ PHP7.3, HTML5, CSS3, MySQL8, フレームワーク:Laravel6.20.4, Bootstrap4
 
 環境構築手順：
 
-1.AWSのEC2上でDockerとDocker-Composeをインストールする。
-2.ドキュメントルート上にgithub上から「tensyoku」をgit cloneする。
-3.「tensyoku」フォルダをカレントフォルダにし、docker-compose up -dで（PHPとNginx）の2つのイメージ作成とコンテナを立ち上げ、起動させる（このケースではデータベース用のコンテナは立ち上げず、RDSを用いている）。
+1.AWSのEC2上でDockerとDocker-Composeをインストールする
+
+2.ドキュメントルート上にgithub上から「tensyoku」をgit cloneする
+
+3.「tensyoku」フォルダをカレントフォルダにし、docker-compose up -dで（PHPとNginx）の2つのイメージ作成とコンテナを立ち上げ、起動させる（このケースではデータベース用のコンテナは立ち上げず、RDSを用いている）
 
 使用した技術：
 

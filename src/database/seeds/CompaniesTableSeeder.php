@@ -81,7 +81,7 @@ class CompaniesTableSeeder extends Seeder
                 'company_job_month' => 0,
                 'company_member_number' => 300,
                 'company_job_salary' => 300,
-                'file_name' => 'app.jpeg'
+                'file_name' => 'phone.jpeg'
               ],
               [
                 'id' => 6,

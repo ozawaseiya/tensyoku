@@ -157,7 +157,7 @@ class AdminController extends Controller
    {
 
        $company = Company::findOrFail($company_apply_id);
-
+       
        unlink(storage_path('app/public/img/'.$company->file_name));
 
        $company->delete();

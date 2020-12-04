@@ -18,7 +18,18 @@ class MessageController extends Controller
     public function index($company_apply_id)
     {
 
-        $folders = Folder::where('company_apply_id', $company_apply_id)->get();
+        $allfolders = Folder::where('company_apply_id', $company_apply_id)->get();
+
+        $folder_id = Message::pluck('folder_id');
+
+        $folders = $allfolders->find($folder_id);
+
+        //不要なフォルダは削除
+
+        $noneed = $allfolders->whereNotIn('id', $folder_id)->first();
+        if (isset($noneed)) {
+            $noneed->delete();
+        } 
 
         return view('admin.messages.index', ['folders' => $folders]);
     }

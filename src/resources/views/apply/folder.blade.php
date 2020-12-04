@@ -24,7 +24,6 @@
           <div class="list-group">
           @foreach($folders as $folder)
           @if (!isset($folder->company_name))
-          <br>
           @else
           <a href="{{ route('apply.message', $folder_id = $folder->id)}}" class="list-group-item">
           求人募集{{ $folder->company_apply_id }}：{{ $folder->company_name }}からメッセージがきています

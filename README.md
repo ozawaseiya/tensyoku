@@ -24,9 +24,9 @@
 
 1.AWSのEC2上でDockerとDocker-Composeをインストールする
 
-2.ドキュメントルート上にgithub上から「tensyoku」をgit cloneする
+2.ドキュメントルート上にgithub上から「tensyoku」を```git clone```する
 
-3.「tensyoku」フォルダをカレントフォルダにし、docker-compose up -dで（PHPとNginx）の2つのイメージ作成とコンテナを立ち上げ、起動させる（このケースではデータベース用のコンテナは立ち上げず、RDSを用いている）
+3.「tensyoku」フォルダをカレントフォルダにし、```docker-compose up -d```で（PHPとNginx）の2つのイメージ作成とコンテナを立ち上げ、起動させる（このケースではデータベース用のコンテナは立ち上げず、RDSを用いている）
 
 使用した技術：
 
@@ -95,6 +95,7 @@
 19.別のユーザー側からこの求人を確認すると募集が停止されているのが確認される  
   ![19別のユーザーが求人を確認すると募集が停止されているのが確認できる](https://user-images.githubusercontent.com/32008816/101148915-8e2d6780-3661-11eb-8d88-fc6aca348bee.png)  
 ***
+  
   
 Webシステム機能一覧：
 
